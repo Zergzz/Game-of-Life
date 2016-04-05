@@ -27,7 +27,7 @@ object Form1: TForm1
     Top = 208
     Width = 75
     Height = 25
-    Caption = 'Button1'
+    Caption = #1057#1090#1072#1088#1090
     TabOrder = 0
     OnClick = Button1Click
   end
@@ -36,9 +36,18 @@ object Form1: TForm1
     Top = 280
     Width = 75
     Height = 25
-    Caption = 'Button2'
+    Caption = #1057#1090#1086#1087
     TabOrder = 1
     OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 200
+    Top = 336
+    Width = 75
+    Height = 25
+    Caption = #1054#1095#1080#1089#1090#1080#1090#1100
+    TabOrder = 2
+    OnClick = Button3Click
   end
   object Timer1: TTimer
     Enabled = False

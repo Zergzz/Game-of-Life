@@ -16,11 +16,13 @@ __published:	// IDE-managed Components
 	TButton *Button1;
 	TTimer *Timer1;
 	TButton *Button2;
+	TButton *Button3;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall Button3Click(TObject *Sender);
 
 
 

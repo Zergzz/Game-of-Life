@@ -32,7 +32,7 @@ int PastNumSquareY;
 int FirstSquare;
 
 
-void DrawLine(int SizeL)
+void DrawLine(int SizeOfSquare, int Width ,TBitmap *Bitmap,TCanvas *Can)
 {
 	Bitmap->Canvas->Brush->Color=clBlack;
 	Bitmap->Canvas->Pen->Width=2;
@@ -40,23 +40,23 @@ void DrawLine(int SizeL)
 	Bitmap->Width=Form1->Image1->Width;
 	Bitmap->Height=Form1->Image1->Height;
 
-	for (int i = 1; i < Form1->Image1->Width; i=i+SizeL)
+	for (int i = 1; i < Width; i=i+SizeOfSquare)
 	{
 		Bitmap->Canvas->MoveTo(i,1);
 		Bitmap->Canvas->LineTo(i,Form1->Image1->Height);
 	}
 
-	for (int i = 1; i < Form1->Image1->Width; i=i+SizeL)
+	for (int i = 1; i < Width; i=i+SizeOfSquare)
 	{
 		Bitmap->Canvas->MoveTo(1,i);
 		Bitmap->Canvas->LineTo(Form1->Image1->Height,i);
 	}
 
-	Form1->Image1->Canvas->Draw(0,0,Bitmap);
+	Can->Draw(0,0,Bitmap);
 }
 
 
-void Life()
+void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 {
 	int iw;
 	int jw;
@@ -308,7 +308,7 @@ void Life()
 
 
 
-void DrawSquare(TColor Clr,int X, int Y, int SizeL)
+void DrawSquare(TColor Clr,int X, int Y, int SizeOfSquare,TBitmap *Bitmap)
 {
 
 
@@ -318,9 +318,9 @@ void DrawSquare(TColor Clr,int X, int Y, int SizeL)
 	Bitmap->Canvas->Pen->Color=Clr;
 
 
-	if ((X % SizeL > 1 && X % SizeL < SizeL) && (Y % SizeL > 1 && Y % SizeL < SizeL))
+	if ((X % SizeOfSquare > 1 && X % SizeOfSquare < SizeOfSquare) && (Y % SizeOfSquare > 1 && Y % SizeOfSquare < SizeOfSquare))
 	{
-		Bitmap->Canvas->Rectangle(X/SizeL*SizeL+2,Y/SizeL*SizeL+2,X/SizeL*SizeL+SizeL,Y/SizeL*SizeL+SizeL);
+		Bitmap->Canvas->Rectangle(X/SizeOfSquare*SizeOfSquare+2,Y/SizeOfSquare*SizeOfSquare+2,X/SizeOfSquare*SizeOfSquare+SizeOfSquare,Y/SizeOfSquare*SizeOfSquare+SizeOfSquare);
 
 	}
 
@@ -329,11 +329,11 @@ void DrawSquare(TColor Clr,int X, int Y, int SizeL)
 
 
 
-void ChangeSquareMove(int X, int Y)
+void ChangeSquareMove(int **MassFirst ,int SizeOfSquare , int X, int Y/*,int *FirstSquare, int *PastNumSquareX, int *PastNumSquareY,TCanvas *Can*/)
 {
 
 
-	if ((PastNumSquareX != X/SizeOfSquare) || (PastNumSquareY != Y/SizeOfSquare) || (FirstSquare == -1))
+	if ((PastNumSquareX != X / SizeOfSquare) || (PastNumSquareY != Y/ SizeOfSquare) || (FirstSquare == -1))
 	{
 
 
@@ -364,8 +364,8 @@ void ChangeSquareMove(int X, int Y)
 			{
 				MassFirst[X/SizeOfSquare][Y/SizeOfSquare]=1;
 				k++;
-				PastNumSquareX=X/SizeOfSquare;
-				PastNumSquareY=Y/SizeOfSquare;
+				PastNumSquareX=X/ SizeOfSquare;
+				PastNumSquareY=Y/ SizeOfSquare;
 			}
 
 			if ((MassFirst[X/SizeOfSquare][Y/SizeOfSquare]==1) && (k == 0) && (FirstSquare==1))
@@ -382,13 +382,13 @@ void ChangeSquareMove(int X, int Y)
 
 	if (MassFirst[X/SizeOfSquare][Y/SizeOfSquare]==1)
 	{
-		DrawSquare(clBlue,X,Y,SizeOfSquare);
+		DrawSquare(clBlue,X,Y,SizeOfSquare,Bitmap);
 		Form1->Image1->Canvas->Draw(0,0,Bitmap);
 	}
 
 	if (MassFirst[X/SizeOfSquare][Y/SizeOfSquare]==0)
 	{
-		DrawSquare(clBlack,X,Y,SizeOfSquare);
+		DrawSquare(clBlack,X,Y,SizeOfSquare,Bitmap);
 		Form1->Image1->Canvas->Draw(0,0,Bitmap);
 	}
 
@@ -396,8 +396,25 @@ void ChangeSquareMove(int X, int Y)
 }
 
 
+void Clear(int **MassFirst,int **MassSecond,int SizeOfSquare,TBitmap *Bitmap,TCanvas *Can)
+{
+	int i;
+	int j;
+	for (i = 0; i < SizeOfMass; i++)
+	{
+		for (j = 0; j < SizeOfMass; j++)
+		{
+			MassFirst[i][j]=0;
+			MassSecond[i][j]=0;
+			DrawSquare(clBlack,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
+		}
+	}
+	Can->Draw(0,0,Bitmap);
+}
 
-void DrawMass()
+
+
+void DrawMass(int **MassFirst, int SizeOfMass, int SizeOfSquare)
 {
 
 	int i;
@@ -409,11 +426,11 @@ void DrawMass()
 		{
 			if (MassFirst[i][j]== 0)
 			{
-				DrawSquare(clBlack,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare);
+				DrawSquare(clBlack,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
 			}
 			if (MassFirst[i][j]== 1)
 			{
-				DrawSquare(clBlue,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare);
+				DrawSquare(clBlue,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
 			}
 		}
 	}
@@ -455,7 +472,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	PastNumSquareX=-1;
 	PastNumSquareY=-1;
 
-	DrawLine(SizeOfSquare);
+	DrawLine(SizeOfSquare,Form1->Image1->Width,Bitmap,Form1->Image1->Canvas);
 }
 //---------------------------------------------------------------------------
 
@@ -464,7 +481,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 
 
 
-int Draw;
+
 
 
 void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift, int X,
@@ -472,7 +489,7 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift, int 
 {
 
    if (GetAsyncKeyState(VK_LBUTTON) != 0) {
-	   ChangeSquareMove(X,Y);
+	   ChangeSquareMove(MassFirst,SizeOfSquare,X,Y/*,&FirstSquare,&PastNumSquareX,&PastNumSquareY,Form1->Image1->Canvas*/);
    }
 
    if (GetAsyncKeyState(VK_LBUTTON) == 0) {
@@ -494,8 +511,8 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 
 void __fastcall TForm1::Timer1Timer(TObject *Sender)
 {
-	Life();
-	DrawMass();
+	Life(MassFirst,MassSecond,SizeOfMass);
+	DrawMass(MassFirst,SizeOfMass,SizeOfSquare);
 	Form1->Image1->Canvas->Draw(0,0,Bitmap);
 
 }
@@ -504,6 +521,12 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 void __fastcall TForm1::Button2Click(TObject *Sender)
 {
 	Timer1->Enabled=False;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+	Clear(MassFirst,MassSecond,SizeOfSquare,Bitmap,Form1->Image1->Canvas);
 }
 //---------------------------------------------------------------------------
 
