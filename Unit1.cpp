@@ -4,10 +4,13 @@
 #pragma hdrstop
 
 #include "Unit1.h"
+#include "Unit2.h"
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
+
+
 TForm1 *Form1;
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -32,28 +35,7 @@ int PastNumSquareY;
 int FirstSquare;
 
 
-void DrawLine(int SizeOfSquare, int Width ,TBitmap *Bitmap,TCanvas *Can)
-{
-	Bitmap->Canvas->Brush->Color=clBlack;
-	Bitmap->Canvas->Pen->Width=2;
-	Bitmap->Canvas->Pen->Color=clWhite;
-	Bitmap->Width=Form1->Image1->Width;
-	Bitmap->Height=Form1->Image1->Height;
 
-	for (int i = 1; i < Width; i=i+SizeOfSquare)
-	{
-		Bitmap->Canvas->MoveTo(i,1);
-		Bitmap->Canvas->LineTo(i,Form1->Image1->Height);
-	}
-
-	for (int i = 1; i < Width; i=i+SizeOfSquare)
-	{
-		Bitmap->Canvas->MoveTo(1,i);
-		Bitmap->Canvas->LineTo(Form1->Image1->Height,i);
-	}
-
-	Can->Draw(0,0,Bitmap);
-}
 
 
 void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
