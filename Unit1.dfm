@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 711
-  ClientWidth = 996
+  ClientHeight = 861
+  ClientWidth = 1134
   Color = clBlack
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,27 +15,32 @@ object Form1: TForm1
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Image2: TImage
-    Left = 456
-    Top = 320
-    Width = 105
-    Height = 105
-  end
   object Notebook1: TNotebook
     Left = 0
     Top = 0
-    Width = 996
-    Height = 711
+    Width = 1134
+    Height = 861
     Align = alClient
     Color = clGreen
     ParentColor = False
     TabOrder = 0
+    ExplicitLeft = 208
+    ExplicitTop = 168
     object TPage
       Left = 0
       Top = 0
       Caption = 'Menu'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      ExplicitWidth = 996
+      ExplicitHeight = 711
+      object Image3: TImage
+        Left = 0
+        Top = 0
+        Width = 1134
+        Height = 861
+        Align = alClient
+        ExplicitLeft = 752
+        ExplicitTop = 56
+      end
       object Panel1: TPanel
         Left = 843
         Top = 315
@@ -89,14 +94,20 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Caption = 'Default'
-      ExplicitWidth = 150
-      ExplicitHeight = 150
+      ExplicitWidth = 996
+      ExplicitHeight = 711
       object Image1: TImage
         Left = 530
         Top = 69
         Width = 802
         Height = 802
         OnMouseMove = Image1MouseMove
+      end
+      object Image2: TImage
+        Left = 456
+        Top = 320
+        Width = 105
+        Height = 105
       end
       object Button1: TButton
         Left = 192

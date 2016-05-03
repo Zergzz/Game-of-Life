@@ -161,9 +161,11 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	DrawLine(SizeOfSquare,Form1->Image1->Width,Bitmap,Form1->Image1->Canvas);
 
 
-	examp->LoadFromFile("Fon.jpg");
-	Fon->Assign(examp);
+	//examp->LoadFromFile("Fon.jpg");
+	//Fon->Assign(examp);
 	//Canvas->Draw(10,10,Bitmap);
+	//Form1->Image3->Canvas->Draw(0,0,Fon);
+	Form1->Image3->Picture->LoadFromFile("Fon.jpg");
 	delete examp;
 
 
@@ -229,5 +231,6 @@ void __fastcall TForm1::Button4Click(TObject *Sender)
    Notebook1->PageIndex=1;
 }
 //---------------------------------------------------------------------------
+
 
 

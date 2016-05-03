@@ -26,6 +26,7 @@ __published:	// IDE-managed Components
 	TButton *Button6;
 	TButton *Button7;
 	TImage *Image2;
+	TImage *Image3;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Button1Click(TObject *Sender);
