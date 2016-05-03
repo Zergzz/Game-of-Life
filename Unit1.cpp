@@ -5,6 +5,7 @@
 
 #include "Unit1.h"
 #include "Unit2.h"
+#include <jpeg.hpp>
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -21,6 +22,10 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
 
 Graphics::TBitmap   *Bitmap = new Graphics::TBitmap;
+
+Graphics::TBitmap   *Fon = new Graphics::TBitmap;
+
+TJPEGImage *examp = new TJPEGImage;
 
 
 
@@ -154,6 +159,14 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	PastNumSquareY=-1;
 
 	DrawLine(SizeOfSquare,Form1->Image1->Width,Bitmap,Form1->Image1->Canvas);
+
+
+	examp->LoadFromFile("Fon.jpg");
+	Fon->Assign(examp);
+	//Canvas->Draw(10,10,Bitmap);
+	delete examp;
+
+
 }
 //---------------------------------------------------------------------------
 
@@ -210,4 +223,11 @@ void __fastcall TForm1::Button3Click(TObject *Sender)
 	Clear(MassFirst,MassSecond,SizeOfSquare,SizeOfMass,Bitmap,Form1->Image1->Canvas);
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+   Notebook1->PageIndex=1;
+}
+//---------------------------------------------------------------------------
+
 
