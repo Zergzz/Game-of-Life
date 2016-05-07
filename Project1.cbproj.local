@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.059,=C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.232,D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\Project1PCH1.h=C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.681,D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\Unit1.cpp=C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.681,C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Unit1.h=D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\Unit1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.046,=C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.107,D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\Project1.cbproj=C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.681,C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.503,=D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая работа V 16\Unit2.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.681,D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\Unit1.dfm=C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.681,D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\Unit1.h=C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.059,=C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.107,C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\Project1.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.232,C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.681,C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Unit1.cpp=D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\Unit1.cpp</Transaction>
   </Transactions>
 </BorlandProject>

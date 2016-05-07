@@ -249,7 +249,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 void __fastcall TForm1::Timer1Timer(TObject *Sender)
 {
 	Life(MassFirst,MassSecond,SizeOfMass);
-	DrawMass(MassFirst,SizeOfMass,SizeOfSquare, Bitmap);
+	DrawMassWithPlaners(MassFirst,SizeOfMass,SizeOfSquare, Bitmap);
 	Form1->Image1->Canvas->Draw(0,0,Bitmap);
 
 }
