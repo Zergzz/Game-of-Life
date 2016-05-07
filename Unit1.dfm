@@ -22,7 +22,6 @@ object Form1: TForm1
     Width = 1150
     Height = 784
     Align = alClient
-    PageIndex = 2
     TabOrder = 0
     object TPage
       Left = 0
@@ -234,10 +233,34 @@ object Form1: TForm1
         Height = 784
         Align = alClient
         Center = True
-        ExplicitLeft = 208
-        ExplicitTop = 256
-        ExplicitWidth = 105
-        ExplicitHeight = 105
+        ExplicitLeft = 16
+        ExplicitTop = 16
+      end
+      object Label1: TLabel
+        Left = 472
+        Top = 104
+        Width = 141
+        Height = 40
+        Caption = #1056#1086#1076#1080#1083#1086#1089#1100
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = 40
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label2: TLabel
+        Left = 472
+        Top = 160
+        Width = 111
+        Height = 40
+        Caption = #1059#1084#1077#1088#1083#1086
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = 40
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
       end
       object Button11: TButton
         Left = 656

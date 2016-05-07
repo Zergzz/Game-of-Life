@@ -276,10 +276,29 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 
 	}
 
+	FILE *F;
+
+	F=fopen("Stat.txt","rw+");
+
+	int Dies;
+	int Life;
+
+	char a;
+
+
+
 	for (i = 0; i < SizeOfMass; i++)
 	{
 		for (j = 0; j < SizeOfMass; j++)
 		{
+			if (MassFirst[i][j]==1 && MassSecond[i][j]==0) {
+			   Dies++;
+
+			}
+			if (MassFirst[i][j]==0 && MassSecond[i][j]==1){
+			   Life++;
+
+			}
 			MassFirst[i][j]=MassSecond[i][j];
         }
 	}

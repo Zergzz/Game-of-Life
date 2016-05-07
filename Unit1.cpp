@@ -9,6 +9,7 @@
 #include <mmsystem.h>
 #include<vfw.h>
 #include <windows.h>
+#include <stdio.h>
 
 
 
@@ -139,7 +140,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 
 
 
-	SizeOfSquare=20;
+	SizeOfSquare=15;
 	SizeOfMass= Image1->Width/SizeOfSquare;
 	MassFirst = new int*[SizeOfMass];
 	MassSecond = new int*[SizeOfMass];
@@ -199,6 +200,11 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	Form1->Image4->Picture->LoadFromFile("Fon.jpg");
 	Form1->Image2->Picture->LoadFromFile("Stat.jpg");
 	Form1->Image5->Picture->LoadFromFile("St.jpg");
+
+
+
+
+
 
 	delete examp;
 
@@ -298,6 +304,7 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 {
    if (CheckBox1->Checked==True) {
 	  Form1->Image3->Picture->LoadFromFile("Ft.jpg");
+	  Form1->Image4->Picture->LoadFromFile("Ft.jpg");
 
 	  //CheckBox1->Enabled=False;
 
@@ -306,6 +313,7 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
    if (CheckBox1->Checked==False)
    {
 	   Form1->Image3->Picture->LoadFromFile("Fon.jpg");
+	   Form1->Image4->Picture->LoadFromFile("Fon.jpg");
 	   //CheckBox1->Enabled=True;
 
    }

@@ -38,6 +38,8 @@ __published:	// IDE-managed Components
 	TMediaPlayer *MediaPlayer2;
 	TButton *Button11;
 	TImage *Image5;
+	TLabel *Label1;
+	TLabel *Label2;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Button1Click(TObject *Sender);
