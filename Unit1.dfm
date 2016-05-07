@@ -1,9 +1,10 @@
 object Form1: TForm1
   Left = 0
   Top = 0
+  BorderStyle = bsNone
   Caption = 'Form1'
-  ClientHeight = 861
-  ClientWidth = 1134
+  ClientHeight = 784
+  ClientWidth = 1150
   Color = clBlack
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,25 +19,32 @@ object Form1: TForm1
   object Notebook1: TNotebook
     Left = 0
     Top = 0
-    Width = 1134
-    Height = 861
+    Width = 1150
+    Height = 784
     Align = alClient
     Color = clGreen
+    PageIndex = 1
     ParentColor = False
     TabOrder = 0
-    ExplicitLeft = 64
-    ExplicitTop = 8
+    ExplicitWidth = 1134
+    ExplicitHeight = 746
     object TPage
       Left = 0
       Top = 0
       Caption = 'Menu'
+      ExplicitWidth = 1134
+      ExplicitHeight = 746
       object Image3: TImage
         Left = 0
         Top = 0
-        Width = 1134
-        Height = 861
+        Width = 1150
+        Height = 784
         Align = alClient
+        AutoSize = True
+        Center = True
         ExplicitLeft = 40
+        ExplicitWidth = 1134
+        ExplicitHeight = 861
       end
       object Panel1: TPanel
         Left = 843
@@ -94,26 +102,24 @@ object Form1: TForm1
       object Image4: TImage
         Left = 0
         Top = 0
-        Width = 1134
-        Height = 861
+        Width = 1150
+        Height = 784
         Align = alClient
+        AutoSize = True
+        Center = True
         ExplicitLeft = 328
         ExplicitTop = 280
         ExplicitWidth = 105
         ExplicitHeight = 105
       end
       object Image1: TImage
-        Left = 530
-        Top = 69
+        AlignWithMargins = True
+        Left = 348
+        Top = 13
         Width = 802
         Height = 802
+        Center = True
         OnMouseMove = Image1MouseMove
-      end
-      object Image2: TImage
-        Left = 456
-        Top = 320
-        Width = 105
-        Height = 105
       end
       object Button1: TButton
         Left = 192
@@ -166,8 +172,6 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Caption = 'Options'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label1: TLabel
         Left = 452
         Top = 265
