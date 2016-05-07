@@ -186,11 +186,18 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	MediaPlayer1->Open();
 	MediaPlayer1->Play();
 	MediaPlayer1->Notify=true;
+
+	MediaPlayer2->FileName="Stat.mp3";
+	MediaPlayer2->Open();
+	//MediaPlayer2->Play();
+	MediaPlayer2->Notify=true;
+
 	//MediaPlayer1->Stop();
 
 
 	Form1->Image3->Picture->LoadFromFile("Fon.jpg");
 	Form1->Image4->Picture->LoadFromFile("Fon.jpg");
+	Form1->Image2->Picture->LoadFromFile("Stat.jpg");
 
 	delete examp;
 
@@ -269,6 +276,59 @@ void __fastcall TForm1::Button9Click(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+
+
+
+
+
+void __fastcall TForm1::Button5Click(TObject *Sender)
+{
+    Notebook1->PageIndex=2;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button8Click(TObject *Sender)
+{
+    Form1->Close();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button10Click(TObject *Sender)
+{
+   if (CheckBox1->Checked==True) {
+	  Form1->Image3->Picture->LoadFromFile("Ft.jpg");
+
+	  //CheckBox1->Enabled=False;
+
+
+   }
+   if (CheckBox1->Checked==False)
+   {
+	   Form1->Image3->Picture->LoadFromFile("Fon.jpg");
+	   //CheckBox1->Enabled=True;
+
+   }
+   Notebook1->PageIndex=0;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{
+   Notebook1->PageIndex=3;
+   MediaPlayer1->Stop();
+   MediaPlayer2->Play();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button11Click(TObject *Sender)
+{
+   Notebook1->PageIndex=0;
+   MediaPlayer2->Stop();
+   MediaPlayer1->Play();
+}
+//---------------------------------------------------------------------------
 
 
 

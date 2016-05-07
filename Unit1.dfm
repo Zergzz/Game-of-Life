@@ -22,18 +22,13 @@ object Form1: TForm1
     Width = 1150
     Height = 784
     Align = alClient
-    Color = clGreen
     PageIndex = 1
-    ParentColor = False
     TabOrder = 0
-    ExplicitWidth = 1134
-    ExplicitHeight = 746
+    ExplicitLeft = -8
     object TPage
       Left = 0
       Top = 0
       Caption = 'Menu'
-      ExplicitWidth = 1134
-      ExplicitHeight = 746
       object Image3: TImage
         Left = 0
         Top = 0
@@ -42,13 +37,13 @@ object Form1: TForm1
         Align = alClient
         AutoSize = True
         Center = True
-        ExplicitLeft = 40
-        ExplicitWidth = 1134
-        ExplicitHeight = 861
+        ExplicitLeft = 144
+        ExplicitTop = 16
       end
       object Panel1: TPanel
-        Left = 843
-        Top = 315
+        AlignWithMargins = True
+        Left = 603
+        Top = 275
         Width = 177
         Height = 322
         TabOrder = 0
@@ -59,6 +54,7 @@ object Form1: TForm1
           Height = 25
           Caption = #1042#1099#1093#1086#1076
           TabOrder = 0
+          OnClick = Button8Click
         end
         object Button4: TButton
           Left = 54
@@ -76,6 +72,7 @@ object Form1: TForm1
           Height = 25
           Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
           TabOrder = 2
+          OnClick = Button5Click
         end
         object Button6: TButton
           Left = 54
@@ -84,6 +81,7 @@ object Form1: TForm1
           Height = 25
           Caption = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
           TabOrder = 3
+          OnClick = Button6Click
         end
         object Button7: TButton
           Left = 54
@@ -115,7 +113,7 @@ object Form1: TForm1
       object Image1: TImage
         AlignWithMargins = True
         Left = 348
-        Top = 13
+        Top = 0
         Width = 802
         Height = 802
         Center = True
@@ -172,42 +170,97 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Caption = 'Options'
-      object Label1: TLabel
-        Left = 452
-        Top = 265
-        Width = 77
-        Height = 13
-        Caption = #1063#1077#1096#1080#1088#1089#1082#1080#1081' '#1082#1086#1090
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clHighlightText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-      end
-      object CheckBox1: TCheckBox
-        Left = 432
-        Top = 264
-        Width = 25
-        Height = 17
-        ParentCustomHint = False
-        Color = clWhite
-        Ctl3D = True
-        DoubleBuffered = False
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentColor = False
-        ParentCtl3D = False
-        ParentDoubleBuffered = False
-        ParentFont = False
-        ParentShowHint = False
-        ShowHint = False
+      object Panel2: TPanel
+        Left = 616
+        Top = 272
+        Width = 185
+        Height = 305
+        Caption = 'Panel2'
         TabOrder = 0
+        object Label1: TLabel
+          Left = 60
+          Top = 41
+          Width = 77
+          Height = 13
+          Caption = #1063#1077#1096#1080#1088#1089#1082#1080#1081' '#1082#1086#1090
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clHighlightText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object CheckBox1: TCheckBox
+          Left = 40
+          Top = 40
+          Width = 25
+          Height = 17
+          ParentCustomHint = False
+          Color = clWhite
+          Ctl3D = True
+          DoubleBuffered = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentColor = False
+          ParentCtl3D = False
+          ParentDoubleBuffered = False
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = False
+          TabOrder = 0
+        end
+        object Button10: TButton
+          Left = 54
+          Top = 264
+          Width = 75
+          Height = 25
+          Caption = #1054#1050
+          TabOrder = 1
+          OnClick = Button10Click
+        end
       end
     end
+    object TPage
+      Left = 0
+      Top = 0
+      Caption = 'S'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object Image2: TImage
+        Left = 0
+        Top = 0
+        Width = 1150
+        Height = 784
+        Align = alClient
+        Center = True
+        ExplicitLeft = 208
+        ExplicitTop = 256
+        ExplicitWidth = 105
+        ExplicitHeight = 105
+      end
+      object Button11: TButton
+        Left = 656
+        Top = 664
+        Width = 75
+        Height = 25
+        Caption = #1047#1072#1082#1088#1099#1090#1100
+        TabOrder = 0
+        OnClick = Button11Click
+      end
+    end
+  end
+  object MediaPlayer2: TMediaPlayer
+    Left = 120
+    Top = 408
+    Width = 253
+    Height = 30
+    DoubleBuffered = True
+    Visible = False
+    ParentDoubleBuffered = False
+    TabOrder = 1
   end
   object Timer1: TTimer
     Enabled = False

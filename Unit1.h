@@ -31,8 +31,13 @@ __published:	// IDE-managed Components
 	TImage *Image4;
 	TMediaPlayer *MediaPlayer1;
 	TButton *Button9;
+	TPanel *Panel2;
 	TCheckBox *CheckBox1;
 	TLabel *Label1;
+	TButton *Button10;
+	TImage *Image2;
+	TMediaPlayer *MediaPlayer2;
+	TButton *Button11;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Button1Click(TObject *Sender);
@@ -41,6 +46,11 @@ __published:	// IDE-managed Components
 	void __fastcall Button3Click(TObject *Sender);
 	void __fastcall Button4Click(TObject *Sender);
 	void __fastcall Button9Click(TObject *Sender);
+	void __fastcall Button5Click(TObject *Sender);
+	void __fastcall Button8Click(TObject *Sender);
+	void __fastcall Button10Click(TObject *Sender);
+	void __fastcall Button6Click(TObject *Sender);
+	void __fastcall Button11Click(TObject *Sender);
 
 
 
