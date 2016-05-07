@@ -33,11 +33,11 @@ __published:	// IDE-managed Components
 	TButton *Button9;
 	TPanel *Panel2;
 	TCheckBox *CheckBox1;
-	TLabel *Label1;
 	TButton *Button10;
 	TImage *Image2;
 	TMediaPlayer *MediaPlayer2;
 	TButton *Button11;
+	TImage *Image5;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Button1Click(TObject *Sender);

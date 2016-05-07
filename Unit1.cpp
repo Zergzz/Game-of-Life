@@ -198,6 +198,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	Form1->Image3->Picture->LoadFromFile("Fon.jpg");
 	Form1->Image4->Picture->LoadFromFile("Fon.jpg");
 	Form1->Image2->Picture->LoadFromFile("Stat.jpg");
+	Form1->Image5->Picture->LoadFromFile("St.jpg");
 
 	delete examp;
 
@@ -329,6 +330,7 @@ void __fastcall TForm1::Button11Click(TObject *Sender)
    MediaPlayer1->Play();
 }
 //---------------------------------------------------------------------------
+
 
 
 

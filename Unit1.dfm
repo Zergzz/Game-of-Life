@@ -22,9 +22,8 @@ object Form1: TForm1
     Width = 1150
     Height = 784
     Align = alClient
-    PageIndex = 1
+    PageIndex = 2
     TabOrder = 0
-    ExplicitLeft = -8
     object TPage
       Left = 0
       Top = 0
@@ -170,32 +169,33 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Caption = 'Options'
+      object Image5: TImage
+        Left = 0
+        Top = 0
+        Width = 1150
+        Height = 784
+        Align = alClient
+        Center = True
+        ExplicitLeft = 344
+        ExplicitTop = 528
+        ExplicitWidth = 105
+        ExplicitHeight = 105
+      end
       object Panel2: TPanel
         Left = 616
         Top = 272
         Width = 185
         Height = 305
-        Caption = 'Panel2'
+        Color = clWhite
+        ParentBackground = False
         TabOrder = 0
-        object Label1: TLabel
-          Left = 60
-          Top = 41
-          Width = 77
-          Height = 13
-          Caption = #1063#1077#1096#1080#1088#1089#1082#1080#1081' '#1082#1086#1090
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clHighlightText
-          Font.Height = -11
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-        end
         object CheckBox1: TCheckBox
           Left = 40
           Top = 40
-          Width = 25
+          Width = 97
           Height = 17
           ParentCustomHint = False
+          Caption = #1063#1077#1096#1080#1088#1089#1082#1080#1081' '#1082#1086#1090
           Color = clWhite
           Ctl3D = True
           DoubleBuffered = False
@@ -227,8 +227,6 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Caption = 'S'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Image2: TImage
         Left = 0
         Top = 0
