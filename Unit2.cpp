@@ -279,7 +279,7 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 
 	FILE *F;
 
-	F=fopen("Stat.txt","w+");
+	F=fopen("Stat.txt","r+");
 
 
 	int Dies;
@@ -287,12 +287,13 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 
 
 	char Buf;
-	char SDies[8];
-	char SLife[8];
+	char SDies[10];
+	char SLife[10];
 	bool Raz;
 	Raz=false;
 
 	i=0;
+	j=0;
 
 
 
@@ -306,7 +307,7 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 		{
 
 
-			if (Buf!='/')
+			if (Buf!='%')
 			{
 			   SLife[i]=Buf;
 			   i++;
@@ -314,14 +315,22 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 			else
 			{
 				Raz=true;
+				SLife[i]='\0';
 				Life=atoi(SLife);
-				i=0;
 			}
 		}
 		else
 		{
-			SDies[i]=Buf;
-			i++;
+			if (Buf!='%')
+			{
+				SDies[j]=Buf;
+				j++;
+			}
+			else
+			{
+			   SDies[j]='\0';
+				break;
+			}
 		}
 
 	}
@@ -329,7 +338,7 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 
 	Dies=atoi(SDies);
 
-
+	fclose(F);
 
 
 
@@ -360,11 +369,16 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 	sprintf(SDies,"%d",Dies);
 
 	char StrIn[16];
-	strlen(StrIn);
+	StrIn[0]='\0';
+
+	int v = strlen(StrIn);
 
 	strcat(StrIn,SLife);
-	strcat(StrIn,"/");
+	strcat(StrIn,"%");
 	strcat(StrIn,SDies);
+	strcat(StrIn,"%");
+
+	F=fopen("Stat.txt","w+");
 
 	fputs(StrIn,F);
 

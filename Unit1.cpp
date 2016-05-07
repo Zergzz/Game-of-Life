@@ -324,6 +324,92 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 
 void __fastcall TForm1::Button6Click(TObject *Sender)
 {
+
+
+
+
+	FILE *F;
+
+	F=fopen("Stat.txt","r+");
+
+
+	int Dies;
+	int Life;
+
+
+   	int i;
+	int j;
+
+
+	char Buf;
+	char SDies[10];
+	char SLife[10];
+	bool Raz;
+	Raz=false;
+
+	i=0;
+	j=0;
+
+
+
+
+
+
+
+
+	while (!feof(F))
+	{
+		Buf=getc(F);
+		if (Raz==false)
+		{
+
+
+			if (Buf!='%')
+			{
+			   SLife[i]=Buf;
+			   i++;
+			}
+			else
+			{
+				Raz=true;
+				SLife[i]='\0';
+				Life=atoi(SLife);
+			}
+		}
+		else
+		{
+			if (Buf!='%')
+			{
+				SDies[j]=Buf;
+				j++;
+			}
+			else
+			{
+			   SDies[j]='\0';
+				break;
+			}
+		}
+
+	}
+
+
+	Dies=atoi(SDies);
+
+	fclose(F);
+
+
+   char Str[20]="Родилось ";
+   //Str[0]='\0';
+
+   strcat(Str,SLife);
+   Label1->Caption=Str;
+   char Str1[20]="Умерло ";
+   strcat(Str1,SDies);
+
+   Label2->Caption=Str1;
+
+
+
    Notebook1->PageIndex=3;
    MediaPlayer1->Stop();
    MediaPlayer2->Play();

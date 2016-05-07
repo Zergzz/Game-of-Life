@@ -10,6 +10,10 @@
 #include <Vcl.ExtCtrls.hpp>
 #include <windows.h>
 #include <Vcl.MPlayer.hpp>
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+#include <iostream>
 
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
