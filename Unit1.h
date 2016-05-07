@@ -8,6 +8,8 @@
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
 #include <Vcl.ExtCtrls.hpp>
+#include <windows.h>
+#include <Vcl.MPlayer.hpp>
 
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
@@ -27,6 +29,11 @@ __published:	// IDE-managed Components
 	TButton *Button7;
 	TImage *Image2;
 	TImage *Image3;
+	TImage *Image4;
+	TMediaPlayer *MediaPlayer1;
+	TButton *Button9;
+	TCheckBox *CheckBox1;
+	TLabel *Label1;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Button1Click(TObject *Sender);
@@ -34,6 +41,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
 	void __fastcall Button4Click(TObject *Sender);
+	void __fastcall Button9Click(TObject *Sender);
 
 
 

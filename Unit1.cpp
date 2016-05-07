@@ -6,6 +6,15 @@
 #include "Unit1.h"
 #include "Unit2.h"
 #include <jpeg.hpp>
+#include <mmsystem.h>
+#include<vfw.h>
+#include <windows.h>
+
+
+
+
+
+
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -161,12 +170,30 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	DrawLine(SizeOfSquare,Form1->Image1->Width,Bitmap,Form1->Image1->Canvas);
 
 
-	//examp->LoadFromFile("Fon.jpg");
-	//Fon->Assign(examp);
-	//Canvas->Draw(10,10,Bitmap);
-	//Form1->Image3->Canvas->Draw(0,0,Fon);
+
+	//PlaySoundA("Menu.mp3", NULL, SND_FILENAME);
+
+	 TCHAR Buffer2[] = TEXT("Menu.mp3");
+   //	HWND MCIHwnd = MCIWndCreate(Application->Handle, HInstance, NULL, Buffer2);
+   //	MCIWndPlay(MCIHwnd);
+
+
+	//PlaySound(Buffer2, NULL, SND_RESOURCE | SND_ASYNC | SND_LOOP);
+	//PlaySound(Buffer2, NULL, SND_FILENAME | SND_ASYNC);
+
+	//PlaySound (Buffer2, NULL, SND_SYNC|SND_ALIAS);
+	MediaPlayer1->FileName="Menu.mp3";
+	MediaPlayer1->Open();
+	MediaPlayer1->Play();
+	MediaPlayer1->Notify=true;
+	//MediaPlayer1->Stop();
+
+
 	Form1->Image3->Picture->LoadFromFile("Fon.jpg");
+	Form1->Image4->Picture->LoadFromFile("Fon.jpg");
+
 	delete examp;
+
 
 
 }
@@ -229,6 +256,15 @@ void __fastcall TForm1::Button3Click(TObject *Sender)
 void __fastcall TForm1::Button4Click(TObject *Sender)
 {
    Notebook1->PageIndex=1;
+   //Form1->Image3->Picture->LoadFromFile("Ft.jpg");
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm1::Button9Click(TObject *Sender)
+{
+   Notebook1->PageIndex=0;
 }
 //---------------------------------------------------------------------------
 

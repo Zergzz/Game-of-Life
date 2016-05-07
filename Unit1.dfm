@@ -24,22 +24,19 @@ object Form1: TForm1
     Color = clGreen
     ParentColor = False
     TabOrder = 0
-    ExplicitLeft = 208
-    ExplicitTop = 168
+    ExplicitLeft = 64
+    ExplicitTop = 8
     object TPage
       Left = 0
       Top = 0
       Caption = 'Menu'
-      ExplicitWidth = 996
-      ExplicitHeight = 711
       object Image3: TImage
         Left = 0
         Top = 0
         Width = 1134
         Height = 861
         Align = alClient
-        ExplicitLeft = 752
-        ExplicitTop = 56
+        ExplicitLeft = 40
       end
       object Panel1: TPanel
         Left = 843
@@ -94,8 +91,17 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Caption = 'Default'
-      ExplicitWidth = 996
-      ExplicitHeight = 711
+      object Image4: TImage
+        Left = 0
+        Top = 0
+        Width = 1134
+        Height = 861
+        Align = alClient
+        ExplicitLeft = 328
+        ExplicitTop = 280
+        ExplicitWidth = 105
+        ExplicitHeight = 105
+      end
       object Image1: TImage
         Left = 530
         Top = 69
@@ -136,13 +142,74 @@ object Form1: TForm1
         TabOrder = 2
         OnClick = Button3Click
       end
+      object MediaPlayer1: TMediaPlayer
+        Left = 480
+        Top = 448
+        Width = 253
+        Height = 30
+        DoubleBuffered = True
+        Visible = False
+        ParentDoubleBuffered = False
+        TabOrder = 3
+      end
+      object Button9: TButton
+        Left = 192
+        Top = 392
+        Width = 75
+        Height = 25
+        Caption = #1052#1077#1085#1102
+        TabOrder = 4
+        OnClick = Button9Click
+      end
+    end
+    object TPage
+      Left = 0
+      Top = 0
+      Caption = 'Options'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object Label1: TLabel
+        Left = 452
+        Top = 265
+        Width = 77
+        Height = 13
+        Caption = #1063#1077#1096#1080#1088#1089#1082#1080#1081' '#1082#1086#1090
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clHighlightText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object CheckBox1: TCheckBox
+        Left = 432
+        Top = 264
+        Width = 25
+        Height = 17
+        ParentCustomHint = False
+        Color = clWhite
+        Ctl3D = True
+        DoubleBuffered = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentColor = False
+        ParentCtl3D = False
+        ParentDoubleBuffered = False
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = False
+        TabOrder = 0
+      end
     end
   end
   object Timer1: TTimer
     Enabled = False
     Interval = 1
     OnTimer = Timer1Timer
-    Left = 328
-    Top = 160
+    Left = 256
+    Top = 152
   end
 end
