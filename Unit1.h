@@ -44,6 +44,19 @@ __published:	// IDE-managed Components
 	TImage *Image5;
 	TLabel *Label1;
 	TLabel *Label2;
+	TLabel *Label3;
+	TGroupBox *GroupBox1;
+	TRadioButton *RadioButton1;
+	TRadioButton *RadioButton2;
+	TRadioButton *RadioButton3;
+	TRadioButton *RadioButton4;
+	TRadioButton *RadioButton5;
+	TRadioButton *RadioButton6;
+	TRadioButton *RadioButton7;
+	TRadioButton *RadioButton8;
+	TRadioButton *RadioButton9;
+	TRadioButton *RadioButton10;
+	TRadioButton *RadioButton12;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Button1Click(TObject *Sender);
@@ -57,6 +70,17 @@ __published:	// IDE-managed Components
 	void __fastcall Button10Click(TObject *Sender);
 	void __fastcall Button6Click(TObject *Sender);
 	void __fastcall Button11Click(TObject *Sender);
+	void __fastcall RadioButton1Click(TObject *Sender);
+	void __fastcall RadioButton2Click(TObject *Sender);
+	void __fastcall RadioButton3Click(TObject *Sender);
+	void __fastcall RadioButton4Click(TObject *Sender);
+	void __fastcall RadioButton5Click(TObject *Sender);
+	void __fastcall RadioButton6Click(TObject *Sender);
+	void __fastcall RadioButton7Click(TObject *Sender);
+	void __fastcall RadioButton8Click(TObject *Sender);
+	void __fastcall RadioButton9Click(TObject *Sender);
+	void __fastcall RadioButton10Click(TObject *Sender);
+
 
 
 

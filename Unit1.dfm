@@ -22,7 +22,7 @@ object Form1: TForm1
     Width = 1150
     Height = 784
     Align = alClient
-    PageIndex = 3
+    PageIndex = 2
     TabOrder = 0
     object TPage
       Left = 0
@@ -182,17 +182,30 @@ object Form1: TForm1
         ExplicitHeight = 105
       end
       object Panel2: TPanel
-        Left = 616
-        Top = 272
-        Width = 185
-        Height = 305
+        Left = 504
+        Top = 112
+        Width = 337
+        Height = 561
         Color = clWhite
         ParentBackground = False
         TabOrder = 0
+        object Label3: TLabel
+          Left = 98
+          Top = 7
+          Width = 39
+          Height = 19
+          Caption = #1058#1077#1084#1099
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = 19
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
         object CheckBox1: TCheckBox
-          Left = 40
-          Top = 40
-          Width = 97
+          Left = 64
+          Top = 32
+          Width = 129
           Height = 17
           ParentCustomHint = False
           Caption = #1063#1077#1096#1080#1088#1089#1082#1080#1081' '#1082#1086#1090
@@ -201,7 +214,7 @@ object Form1: TForm1
           DoubleBuffered = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = 15
           Font.Name = 'Tahoma'
           Font.Style = []
           ParentColor = False
@@ -213,13 +226,118 @@ object Form1: TForm1
           TabOrder = 0
         end
         object Button10: TButton
-          Left = 54
-          Top = 264
+          Left = 134
+          Top = 456
           Width = 75
           Height = 25
           Caption = #1054#1050
           TabOrder = 1
           OnClick = Button10Click
+        end
+        object GroupBox1: TGroupBox
+          Left = 56
+          Top = 55
+          Width = 193
+          Height = 362
+          TabOrder = 2
+          object RadioButton1: TRadioButton
+            Left = 21
+            Top = 39
+            Width = 113
+            Height = 17
+            Caption = #1063#1077#1096#1080#1088#1089#1082#1080#1081' '#1082#1086#1090
+            TabOrder = 0
+            OnClick = RadioButton1Click
+          end
+          object RadioButton2: TRadioButton
+            Left = 21
+            Top = 16
+            Width = 113
+            Height = 17
+            Caption = #1050#1086#1089#1084#1086#1089
+            TabOrder = 1
+            OnClick = RadioButton2Click
+          end
+          object RadioButton3: TRadioButton
+            Left = 21
+            Top = 62
+            Width = 113
+            Height = 17
+            Caption = #1054#1075#1086#1085#1100
+            TabOrder = 2
+            OnClick = RadioButton3Click
+          end
+          object RadioButton4: TRadioButton
+            Left = 21
+            Top = 85
+            Width = 113
+            Height = 17
+            Caption = #1042#1086#1076#1072
+            TabOrder = 3
+            OnClick = RadioButton4Click
+          end
+          object RadioButton5: TRadioButton
+            Left = 21
+            Top = 108
+            Width = 113
+            Height = 17
+            Caption = #1058#1088#1086#1087#1080#1095#1077#1089#1082#1080#1081' '#1088#1072#1081
+            TabOrder = 4
+            OnClick = RadioButton5Click
+          end
+          object RadioButton6: TRadioButton
+            Left = 21
+            Top = 131
+            Width = 113
+            Height = 17
+            Caption = #1051#1077#1089
+            TabOrder = 5
+            OnClick = RadioButton6Click
+          end
+          object RadioButton7: TRadioButton
+            Left = 21
+            Top = 154
+            Width = 113
+            Height = 17
+            Caption = #1058#1105#1084#1085#1099#1081' '#1083#1077#1089
+            TabOrder = 6
+            OnClick = RadioButton7Click
+          end
+          object RadioButton8: TRadioButton
+            Left = 24
+            Top = 177
+            Width = 113
+            Height = 17
+            Caption = #1044#1086#1078#1076#1100
+            TabOrder = 7
+            OnClick = RadioButton8Click
+          end
+          object RadioButton9: TRadioButton
+            Left = 24
+            Top = 200
+            Width = 113
+            Height = 17
+            Caption = #1047#1080#1084#1072
+            TabOrder = 8
+            OnClick = RadioButton9Click
+          end
+          object RadioButton10: TRadioButton
+            Left = 24
+            Top = 223
+            Width = 113
+            Height = 17
+            Caption = #1042#1086#1079#1076#1091#1093
+            TabOrder = 9
+            OnClick = RadioButton10Click
+          end
+          object RadioButton12: TRadioButton
+            Left = 24
+            Top = 253
+            Width = 113
+            Height = 17
+            Caption = #1052#1080#1085#1080#1084#1072#1083#1080#1079#1084
+            TabOrder = 10
+          end
         end
       end
     end

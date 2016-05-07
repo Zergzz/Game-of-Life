@@ -51,6 +51,12 @@ int FirstSquare;
 
 
 
+TColor FonColor;
+TColor SquareColor;
+
+
+
+
 
 
 
@@ -302,21 +308,164 @@ void __fastcall TForm1::Button8Click(TObject *Sender)
 
 void __fastcall TForm1::Button10Click(TObject *Sender)
 {
-   if (CheckBox1->Checked==True) {
-	  Form1->Image3->Picture->LoadFromFile("Ft.jpg");
-	  Form1->Image4->Picture->LoadFromFile("Ft.jpg");
+
+
+	MediaPlayer1->Close();
+
+
+
+
+   if (RadioButton1->Checked==True) {
+	  Form1->Image3->Picture->LoadFromFile("Темы//Чеширский кот//Fon.jpg");
+	  Form1->Image4->Picture->LoadFromFile("Темы//Чеширский кот//Fon.jpg");
+	  Form1->Image2->Picture->LoadFromFile("Темы//Чеширский кот//Stat.jpg");
+	  MediaPlayer1->FileName="Темы//Чеширский кот//Fon.mp3";
+	  MediaPlayer2->FileName="Темы//Чеширский кот//Stat.mp3";
+	  //Form1->Image5->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
 
 	  //CheckBox1->Enabled=False;
 
 
    }
-   if (CheckBox1->Checked==False)
+
+
+
+
+   if (RadioButton7->Checked==True) {
+	  Form1->Image3->Picture->LoadFromFile("Темы//Тёмный лес//Fon.jpg");
+	  Form1->Image4->Picture->LoadFromFile("Темы//Тёмный лес//Fon.jpg");
+	  Form1->Image2->Picture->LoadFromFile("Темы//Тёмный лес//Stat.jpg");
+	  MediaPlayer1->FileName="Темы//Тёмный лес//Fon.mp3";
+	  MediaPlayer2->FileName="Темы//Тёмный лес//Stat.mp3";
+	  //Form1->Image5->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
+
+	  //CheckBox1->Enabled=False;
+
+
+   }
+
+
+   if (RadioButton2->Checked==True)
    {
-	   Form1->Image3->Picture->LoadFromFile("Fon.jpg");
-	   Form1->Image4->Picture->LoadFromFile("Fon.jpg");
+	   Form1->Image3->Picture->LoadFromFile("Темы//Космос//Fon.jpg");
+	   Form1->Image4->Picture->LoadFromFile("Темы//Космос//Fon.jpg");
+	   Form1->Image2->Picture->LoadFromFile("Темы//Космос//Stat.jpg");
+	   MediaPlayer1->FileName="Темы//Космос//Fon.mp3";
+	   MediaPlayer2->FileName="Темы//Космос//Stat.mp3";
+	   //Form1->Image4->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
 	   //CheckBox1->Enabled=True;
 
    }
+
+
+   if (RadioButton3->Checked==True) {
+	  Form1->Image3->Picture->LoadFromFile("Темы//Огонь//Fon.jpg");
+	   Form1->Image4->Picture->LoadFromFile("Темы//Огонь//Fon.jpg");
+	   Form1->Image2->Picture->LoadFromFile("Темы//Огонь//Stat.jpg");
+	   MediaPlayer1->FileName="Темы//Огонь//Fon.mp3";
+	   MediaPlayer2->FileName="Темы//Огонь//Stat.mp3";
+
+   }
+
+
+	if (RadioButton4->Checked==True) {
+	  Form1->Image3->Picture->LoadFromFile("Темы//Вода//Fon.jpg");
+	   Form1->Image4->Picture->LoadFromFile("Темы//Вода//Fon.jpg");
+	   Form1->Image2->Picture->LoadFromFile("Темы//Вода//Stat.jpg");
+	   MediaPlayer1->FileName="Темы//Вода//Fon.mp3";
+	   MediaPlayer2->FileName="Темы//Вода//Stat.mp3";
+
+   }
+
+   if (RadioButton5->Checked==True) {
+	  Form1->Image3->Picture->LoadFromFile("Темы//Тропический рай//Fon.jpg");
+	   Form1->Image4->Picture->LoadFromFile("Темы//Тропический рай//Fon.jpg");
+	   Form1->Image2->Picture->LoadFromFile("Темы//Тропический рай//Stat.jpg");
+	   MediaPlayer1->FileName="Темы//Тропический рай//Fon.mp3";
+	   MediaPlayer2->FileName="Темы//Тропический рай//Stat.mp3";
+
+   }
+
+
+
+   if (RadioButton6->Checked==True) {
+	  Form1->Image3->Picture->LoadFromFile("Темы//Лес//Fon.jpg");
+	   Form1->Image4->Picture->LoadFromFile("Темы//Лес//Fon.jpg");
+	   Form1->Image2->Picture->LoadFromFile("Темы//Лес//Stat.jpg");
+	   MediaPlayer1->FileName="Темы//Лес//Fon.mp3";
+	   MediaPlayer2->FileName="Темы//Лес//Stat.mp3";
+
+   }
+
+
+   if (RadioButton8->Checked==True)
+   {
+	   Form1->Image3->Picture->LoadFromFile("Темы//Дождь//Fon.jpg");
+	   Form1->Image4->Picture->LoadFromFile("Темы//Дождь//Fon.jpg");
+	   Form1->Image2->Picture->LoadFromFile("Темы//Дождь//Stat.jpg");
+	   MediaPlayer1->FileName="Темы//Дождь//Fon.mp3";
+	   MediaPlayer2->FileName="Темы//Дождь//Stat.mp3";
+	   //Form1->Image4->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
+	   //CheckBox1->Enabled=True;
+
+   }
+
+
+
+   if (RadioButton10->Checked==True)
+   {
+	   Form1->Image3->Picture->LoadFromFile("Темы//Воздух//Fon.jpg");
+	   Form1->Image4->Picture->LoadFromFile("Темы//Воздух//Fon.jpg");
+	   Form1->Image2->Picture->LoadFromFile("Темы//Воздух//Stat.jpg");
+	   MediaPlayer1->FileName="Темы//Воздух//Fon.mp3";
+	   MediaPlayer2->FileName="Темы//Воздух//Stat.mp3";
+	   //Form1->Image4->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
+	   //CheckBox1->Enabled=True;
+
+   }
+
+
+
+
+   if (RadioButton7->Checked==True)
+   {
+	   Form1->Image3->Picture->LoadFromFile("Темы//Тёмный лес//Fon.jpg");
+	   Form1->Image4->Picture->LoadFromFile("Темы//Тёмный лес//Fon.jpg");
+	   Form1->Image2->Picture->LoadFromFile("Темы//Тёмный лес//Stat.jpg");
+	   MediaPlayer1->FileName="Темы//Тёмный лес//Fon.mp3";
+	   MediaPlayer2->FileName="Темы//Тёмный лес//Stat.mp3";
+	   //Form1->Image4->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
+	   //CheckBox1->Enabled=True;
+
+   }
+
+
+
+   if (RadioButton9->Checked==True)
+   {
+	   Form1->Image3->Picture->LoadFromFile("Темы//Зима//Fon.jpg");
+	   Form1->Image4->Picture->LoadFromFile("Темы//Зима//Fon.jpg");
+	   Form1->Image2->Picture->LoadFromFile("Темы//Зима//Stat.jpg");
+	   MediaPlayer1->FileName="Темы//Зима//Fon.mp3";
+	   MediaPlayer2->FileName="Темы//Зима//Stat.mp3";
+	   //Form1->Image4->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
+	   //CheckBox1->Enabled=True;
+
+   }
+
+
+   	MediaPlayer1->Open();
+
+   MediaPlayer1->Play();
+
+
+
+
+
+
+
+
+
    Notebook1->PageIndex=0;
 }
 //---------------------------------------------------------------------------
@@ -427,5 +576,70 @@ void __fastcall TForm1::Button11Click(TObject *Sender)
 
 
 
+
+
+
+
+void __fastcall TForm1::RadioButton1Click(TObject *Sender)
+{
+	Form1->Image5->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton2Click(TObject *Sender)
+{
+   Form1->Image5->Picture->LoadFromFile("Темы//Космос//Set.jpg");
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm1::RadioButton3Click(TObject *Sender)
+{
+	Form1->Image5->Picture->LoadFromFile("Темы//Огонь//Set.jpg");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton4Click(TObject *Sender)
+{
+	Form1->Image5->Picture->LoadFromFile("Темы//Вода//Set.jpg");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton5Click(TObject *Sender)
+{
+	Form1->Image5->Picture->LoadFromFile("Темы//Тропический рай//Set.jpg");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton6Click(TObject *Sender)
+{
+	Form1->Image5->Picture->LoadFromFile("Темы//Лес//Set.jpg");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton7Click(TObject *Sender)
+{
+	Form1->Image5->Picture->LoadFromFile("Темы//Тёмный лес//Set.jpg");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton8Click(TObject *Sender)
+{
+   Form1->Image5->Picture->LoadFromFile("Темы//Дождь//Set.jpg");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton9Click(TObject *Sender)
+{
+   Form1->Image5->Picture->LoadFromFile("Темы//Зима//Set.jpg");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton10Click(TObject *Sender)
+{
+   Form1->Image5->Picture->LoadFromFile("Темы//Воздух//Set.jpg");
+}
+//---------------------------------------------------------------------------
 
 
