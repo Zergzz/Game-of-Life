@@ -9,6 +9,9 @@
 #include <Vcl.Forms.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <stdio.h>
+#include <conio.h>
+#include <string.h>
+#include <iostream>
 
 
 

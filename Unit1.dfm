@@ -95,6 +95,8 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Caption = 'Default'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Image4: TImage
         Left = 0
         Top = 0
@@ -168,6 +170,8 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Caption = 'Options'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Image5: TImage
         Left = 0
         Top = 0
@@ -226,6 +230,8 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Caption = 'S'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Image2: TImage
         Left = 0
         Top = 0

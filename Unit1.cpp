@@ -140,7 +140,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 
 
 
-	SizeOfSquare=15;
+	SizeOfSquare=20;
 	SizeOfMass= Image1->Width/SizeOfSquare;
 	MassFirst = new int*[SizeOfMass];
 	MassSecond = new int*[SizeOfMass];

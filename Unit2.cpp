@@ -5,6 +5,7 @@
 #include "Unit2.h"
 
 
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
@@ -278,10 +279,60 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 
 	FILE *F;
 
-	F=fopen("Stat.txt","rw+");
+	F=fopen("Stat.txt","w+");
+
 
 	int Dies;
 	int Life;
+
+
+	char Buf;
+	char SDies[8];
+	char SLife[8];
+	bool Raz;
+	Raz=false;
+
+	i=0;
+
+
+
+
+
+
+	while (!feof(F))
+	{
+		Buf=getc(F);
+		if (Raz==false)
+		{
+
+
+			if (Buf!='/')
+			{
+			   SLife[i]=Buf;
+			   i++;
+			}
+			else
+			{
+				Raz=true;
+				Life=atoi(SLife);
+				i=0;
+			}
+		}
+		else
+		{
+			SDies[i]=Buf;
+			i++;
+		}
+
+	}
+
+
+	Dies=atoi(SDies);
+
+
+
+
+
 
 	char a;
 
@@ -302,6 +353,24 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 			MassFirst[i][j]=MassSecond[i][j];
         }
 	}
+
+
+
+	sprintf(SLife,"%d",Life);
+	sprintf(SDies,"%d",Dies);
+
+	char StrIn[16];
+	strlen(StrIn);
+
+	strcat(StrIn,SLife);
+	strcat(StrIn,"/");
+	strcat(StrIn,SDies);
+
+	fputs(StrIn,F);
+
+	fclose(F);
+
+
 
 
 }
