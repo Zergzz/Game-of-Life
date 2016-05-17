@@ -22,7 +22,7 @@ object Form1: TForm1
     Width = 1150
     Height = 784
     Align = alClient
-    PageIndex = 2
+    PageIndex = 1
     TabOrder = 0
     object TPage
       Left = 0
@@ -36,8 +36,10 @@ object Form1: TForm1
         Align = alClient
         AutoSize = True
         Center = True
-        ExplicitLeft = 144
-        ExplicitTop = 16
+        ExplicitLeft = 384
+        ExplicitTop = 320
+        ExplicitWidth = 105
+        ExplicitHeight = 105
       end
       object Panel1: TPanel
         AlignWithMargins = True
@@ -104,23 +106,36 @@ object Form1: TForm1
         Align = alClient
         AutoSize = True
         Center = True
-        ExplicitLeft = 328
-        ExplicitTop = 280
-        ExplicitWidth = 105
-        ExplicitHeight = 105
+        ExplicitLeft = -48
+        ExplicitTop = -24
       end
       object Image1: TImage
         AlignWithMargins = True
-        Left = 348
-        Top = 0
+        Left = 379
+        Top = 24
         Width = 802
         Height = 802
         Center = True
         OnMouseMove = Image1MouseMove
       end
+      object Label4: TLabel
+        Left = 296
+        Top = 436
+        Width = 34
+        Height = 13
+        Caption = '1-1000'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clHighlightText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+      end
       object Button1: TButton
-        Left = 192
-        Top = 216
+        Left = 144
+        Top = 192
         Width = 75
         Height = 25
         Caption = #1057#1090#1072#1088#1090
@@ -128,8 +143,8 @@ object Form1: TForm1
         OnClick = Button1Click
       end
       object Button2: TButton
-        Left = 192
-        Top = 280
+        Left = 144
+        Top = 256
         Width = 75
         Height = 25
         Caption = #1057#1090#1086#1087
@@ -137,8 +152,8 @@ object Form1: TForm1
         OnClick = Button2Click
       end
       object Button3: TButton
-        Left = 192
-        Top = 336
+        Left = 144
+        Top = 312
         Width = 75
         Height = 25
         Caption = #1054#1095#1080#1089#1090#1080#1090#1100
@@ -154,15 +169,56 @@ object Form1: TForm1
         Visible = False
         ParentDoubleBuffered = False
         TabOrder = 3
+        OnNotify = MediaPlayer1Notify
       end
       object Button9: TButton
-        Left = 192
-        Top = 392
+        Left = 144
+        Top = 368
         Width = 75
         Height = 25
         Caption = #1052#1077#1085#1102
         TabOrder = 4
         OnClick = Button9Click
+      end
+      object Button12: TButton
+        Left = 136
+        Top = 429
+        Width = 75
+        Height = 25
+        Caption = #1057#1082#1086#1088#1086#1089#1090#1100
+        TabOrder = 5
+        OnClick = Button12Click
+      end
+      object Edit1: TEdit
+        Left = 280
+        Top = 455
+        Width = 65
+        Height = 21
+        TabOrder = 6
+      end
+      object ColorBox1: TColorBox
+        Left = 137
+        Top = 480
+        Width = 128
+        Height = 22
+        TabOrder = 7
+        OnChange = ColorBox1Change
+      end
+      object ColorBox2: TColorBox
+        Left = 136
+        Top = 520
+        Width = 145
+        Height = 22
+        TabOrder = 8
+        OnChange = ColorBox2Change
+      end
+      object ColorBox3: TColorBox
+        Left = 136
+        Top = 568
+        Width = 145
+        Height = 22
+        TabOrder = 9
+        OnChange = ColorBox3Change
       end
     end
     object TPage
@@ -393,14 +449,15 @@ object Form1: TForm1
     end
   end
   object MediaPlayer2: TMediaPlayer
-    Left = 120
-    Top = 408
+    Left = 144
+    Top = 608
     Width = 253
     Height = 30
     DoubleBuffered = True
     Visible = False
     ParentDoubleBuffered = False
     TabOrder = 1
+    OnNotify = MediaPlayer2Notify
   end
   object Timer1: TTimer
     Enabled = False
@@ -408,5 +465,12 @@ object Form1: TForm1
     OnTimer = Timer1Timer
     Left = 256
     Top = 152
+  end
+  object XPColorMap1: TXPColorMap
+    HighlightColor = clWhite
+    BtnSelectedColor = clBtnFace
+    UnusedColor = clWhite
+    Left = 392
+    Top = 168
   end
 end

@@ -52,7 +52,7 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <AllPackageLibs>rtl.lib;vcl.lib;vclx.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;vclx.lib;vclactnband.lib</AllPackageLibs>
         <SanitizedProjectName>Project1</SanitizedProjectName>
         <ILINK_LibraryPath>D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <IncludePath>D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\;$(IncludePath)</IncludePath>
@@ -109,7 +109,7 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <LinkPackageImports>rtl.bpi;vcl.bpi;vclx.bpi</LinkPackageImports>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;vclx.bpi;vclactnband.bpi</LinkPackageImports>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
     </PropertyGroup>

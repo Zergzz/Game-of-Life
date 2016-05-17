@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include <conio.h>
 #include <string.h>
+#include <Vcl.ActnColorMaps.hpp>
+#include <Vcl.ActnMan.hpp>
 #include <iostream>
 
 //---------------------------------------------------------------------------
@@ -31,7 +33,6 @@ __published:	// IDE-managed Components
 	TButton *Button5;
 	TButton *Button6;
 	TButton *Button7;
-	TImage *Image3;
 	TImage *Image4;
 	TMediaPlayer *MediaPlayer1;
 	TButton *Button9;
@@ -57,6 +58,14 @@ __published:	// IDE-managed Components
 	TRadioButton *RadioButton9;
 	TRadioButton *RadioButton10;
 	TRadioButton *RadioButton12;
+	TButton *Button12;
+	TEdit *Edit1;
+	TLabel *Label4;
+	TImage *Image3;
+	TColorBox *ColorBox1;
+	TXPColorMap *XPColorMap1;
+	TColorBox *ColorBox2;
+	TColorBox *ColorBox3;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Button1Click(TObject *Sender);
@@ -80,6 +89,15 @@ __published:	// IDE-managed Components
 	void __fastcall RadioButton8Click(TObject *Sender);
 	void __fastcall RadioButton9Click(TObject *Sender);
 	void __fastcall RadioButton10Click(TObject *Sender);
+	void __fastcall Button12Click(TObject *Sender);
+	void __fastcall ColorBox1Change(TObject *Sender);
+	void __fastcall ColorBox2Change(TObject *Sender);
+	void __fastcall ColorBox3Change(TObject *Sender);
+	void __fastcall MediaPlayer2Notify(TObject *Sender);
+	void __fastcall MediaPlayer1Notify(TObject *Sender);
+
+
+
 
 
 

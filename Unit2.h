@@ -15,12 +15,12 @@
 
 
 
-void DrawLine(int SizeOfSquare, int Width ,TBitmap *Bitmap,TCanvas *Can);
+void DrawLine(int SizeOfSquare, int Width ,TBitmap *Bitmap,TCanvas *Can,TColor Clr);
 void Life(int **MassFirst, int **MassSecond,int SizeOfMass);
 void DrawSquare(TColor Clr,int X, int Y, int SizeOfSquare,TBitmap *Bitmap);
-void Clear(int **MassFirst,int **MassSecond,int SizeOfSquare,int SizeOfMass,TBitmap *Bitmap,TCanvas *Can);
-void DrawMass(int **MassFirst, int SizeOfMass, int SizeOfSquare  ,TBitmap *Bitmap);
-void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitmap *Bitmap);
+void Clear(int **MassFirst,int **MassSecond,int SizeOfSquare,int SizeOfMass,TBitmap *Bitmap,TCanvas *Can,TColor FonColor);
+void DrawMass(int **MassFirst, int SizeOfMass, int SizeOfSquare  ,TBitmap *Bitmap,TColor FonColor, TColor SquareColor);
+void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitmap *Bitmap,TColor FonColor,TColor SquareColor,TColor PlanerColor);
 
 
 

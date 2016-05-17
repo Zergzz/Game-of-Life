@@ -12,9 +12,9 @@
 
 
 
-void DrawLine(int SizeOfSquare, int Width ,TBitmap *Bitmap,TCanvas *Can)
+void DrawLine(int SizeOfSquare, int Width ,TBitmap *Bitmap,TCanvas *Can,TColor Clr)
 {
-	Bitmap->Canvas->Brush->Color=clBlack;
+	Bitmap->Canvas->Brush->Color=clWhite;
 	Bitmap->Canvas->Pen->Width=2;
 	Bitmap->Canvas->Pen->Color=clWhite;
 	Bitmap->Width=Width;
@@ -31,6 +31,9 @@ void DrawLine(int SizeOfSquare, int Width ,TBitmap *Bitmap,TCanvas *Can)
 		Bitmap->Canvas->MoveTo(1,i);
 		Bitmap->Canvas->LineTo(Width,i);
 	}
+
+	//Bitmap->Canvas->Pen->Color=clWhite;
+   //	Bitmap->Canvas->Brush->Color=clWhite;
 
 	Can->Draw(0,0,Bitmap);
 }
@@ -439,7 +442,6 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 
 
 
-
 void DrawSquare(TColor Clr,int X, int Y, int SizeOfSquare,TBitmap *Bitmap)
 {
 
@@ -462,7 +464,7 @@ void DrawSquare(TColor Clr,int X, int Y, int SizeOfSquare,TBitmap *Bitmap)
 
 
 
-void Clear(int **MassFirst,int **MassSecond,int SizeOfSquare,int SizeOfMass,TBitmap *Bitmap,TCanvas *Can)
+void Clear(int **MassFirst,int **MassSecond,int SizeOfSquare,int SizeOfMass,TBitmap *Bitmap,TCanvas *Can,TColor FonColor)
 {
 	int i;
 	int j;
@@ -472,7 +474,7 @@ void Clear(int **MassFirst,int **MassSecond,int SizeOfSquare,int SizeOfMass,TBit
 		{
 			MassFirst[i][j]=0;
 			MassSecond[i][j]=0;
-			DrawSquare(clBlack,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
+			DrawSquare(FonColor,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
 		}
 	}
 	Can->Draw(0,0,Bitmap);
@@ -482,7 +484,7 @@ void Clear(int **MassFirst,int **MassSecond,int SizeOfSquare,int SizeOfMass,TBit
 
 
 
-void DrawMass(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitmap *Bitmap)
+void DrawMass(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitmap *Bitmap,TColor FonColor, TColor SquareColor)
 {
 
 	int i;
@@ -494,11 +496,11 @@ void DrawMass(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitmap *Bitmap)
 		{
 			if (MassFirst[i][j]== 0)
 			{
-				DrawSquare(clBlack,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(FonColor,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
 			}
 			if (MassFirst[i][j]== 1)
 			{
-				DrawSquare(clBlue,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(SquareColor,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
 			}
 		}
 	}
@@ -507,7 +509,7 @@ void DrawMass(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitmap *Bitmap)
 
 
 
-void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitmap *Bitmap)
+void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitmap *Bitmap,TColor FonColor,TColor SquareColor,TColor PlanerColor)
 {
 
 	int i;
@@ -531,11 +533,11 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 		{
 			if (MassFirst[i][j]== 0)
 			{
-				DrawSquare(clBlack,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(FonColor,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
 			}
 			if (MassFirst[i][j]== 1)
 			{
-				DrawSquare(clBlue,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(SquareColor,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
 			}
 		}
 	}
@@ -604,11 +606,11 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 
 			{
 
-				DrawSquare(clRed,XMass[1]*SizeOfSquare+10,YMass[1]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[5]*SizeOfSquare+10,YMass[5]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[6]*SizeOfSquare+10,YMass[6]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[7]*SizeOfSquare+10,YMass[7]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[8]*SizeOfSquare+10,YMass[8]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[1]*SizeOfSquare+10,YMass[1]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[5]*SizeOfSquare+10,YMass[5]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[6]*SizeOfSquare+10,YMass[6]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[7]*SizeOfSquare+10,YMass[7]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[8]*SizeOfSquare+10,YMass[8]*SizeOfSquare+10,SizeOfSquare,Bitmap);
 
 			}
 
@@ -622,11 +624,11 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 
 			{
 
-				DrawSquare(clRed,XMass[0]*SizeOfSquare+10,YMass[0]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[2]*SizeOfSquare+10,YMass[2]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[4]*SizeOfSquare+10,YMass[4]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[5]*SizeOfSquare+10,YMass[5]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[7]*SizeOfSquare+10,YMass[7]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[0]*SizeOfSquare+10,YMass[0]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[2]*SizeOfSquare+10,YMass[2]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[4]*SizeOfSquare+10,YMass[4]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[5]*SizeOfSquare+10,YMass[5]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[7]*SizeOfSquare+10,YMass[7]*SizeOfSquare+10,SizeOfSquare,Bitmap);
 
 			}
 
@@ -639,11 +641,11 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 
 			{
 
-				DrawSquare(clRed,XMass[2]*SizeOfSquare+10,YMass[2]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[3]*SizeOfSquare+10,YMass[3]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[5]*SizeOfSquare+10,YMass[5]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[7]*SizeOfSquare+10,YMass[7]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[8]*SizeOfSquare+10,YMass[8]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[2]*SizeOfSquare+10,YMass[2]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[3]*SizeOfSquare+10,YMass[3]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[5]*SizeOfSquare+10,YMass[5]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[7]*SizeOfSquare+10,YMass[7]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[8]*SizeOfSquare+10,YMass[8]*SizeOfSquare+10,SizeOfSquare,Bitmap);
 
 			}
 
@@ -656,11 +658,11 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 
 			{
 
-				DrawSquare(clRed,XMass[0]*SizeOfSquare+10,YMass[0]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[4]*SizeOfSquare+10,YMass[4]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[5]*SizeOfSquare+10,YMass[5]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[6]*SizeOfSquare+10,YMass[6]*SizeOfSquare+10,SizeOfSquare,Bitmap);
-				DrawSquare(clRed,XMass[7]*SizeOfSquare+10,YMass[7]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[0]*SizeOfSquare+10,YMass[0]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[4]*SizeOfSquare+10,YMass[4]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[5]*SizeOfSquare+10,YMass[5]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[6]*SizeOfSquare+10,YMass[6]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[7]*SizeOfSquare+10,YMass[7]*SizeOfSquare+10,SizeOfSquare,Bitmap);
 
 			}
 

@@ -53,6 +53,7 @@ int FirstSquare;
 
 TColor FonColor;
 TColor SquareColor;
+TColor PlanerColor;
 
 
 
@@ -119,14 +120,18 @@ void ChangeSquareMove(int **MassFirst ,int SizeOfSquare , int X, int Y/*,int *Fi
 
 	if (MassFirst[X/SizeOfSquare][Y/SizeOfSquare]==1)
 	{
-		DrawSquare(clBlue,X,Y,SizeOfSquare,Bitmap);
+		DrawSquare(SquareColor,X,Y,SizeOfSquare,Bitmap);
 		Form1->Image1->Canvas->Draw(0,0,Bitmap);
 	}
 
 	if (MassFirst[X/SizeOfSquare][Y/SizeOfSquare]==0)
 	{
-		DrawSquare(clBlack,X,Y,SizeOfSquare,Bitmap);
+
+		//Bitmap->Canvas->Brush->Style = bsClear;
+		DrawSquare(FonColor,X,Y,SizeOfSquare,Bitmap);
 		Form1->Image1->Canvas->Draw(0,0,Bitmap);
+
+
 	}
 
 	}
@@ -143,6 +148,13 @@ void ChangeSquareMove(int **MassFirst ,int SizeOfSquare , int X, int Y/*,int *Fi
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 	int i,j;
+
+	Form1->Image1->Transparent=True;
+
+	FonColor=clWhite;
+	SquareColor=clRed;
+	PlanerColor=clBlue;
+
 
 
 
@@ -174,7 +186,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	PastNumSquareX=-1;
 	PastNumSquareY=-1;
 
-	DrawLine(SizeOfSquare,Form1->Image1->Width,Bitmap,Form1->Image1->Canvas);
+	DrawLine(SizeOfSquare,Form1->Image1->Width,Bitmap,Form1->Image1->Canvas,clGray);
 
 
 
@@ -201,11 +213,21 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 
 	//MediaPlayer1->Stop();
 
-
+   /*
 	Form1->Image3->Picture->LoadFromFile("Fon.jpg");
 	Form1->Image4->Picture->LoadFromFile("Fon.jpg");
 	Form1->Image2->Picture->LoadFromFile("Stat.jpg");
 	Form1->Image5->Picture->LoadFromFile("St.jpg");
+
+	*/
+
+	Form1->Image3->Picture->LoadFromFile("Темы//Космос//Fon.jpg");
+	   Form1->Image4->Picture->LoadFromFile("Темы//Космос//Fon.jpg");
+	   Form1->Image2->Picture->LoadFromFile("Темы//Космос//Stat.jpg");
+	   Form1->Image5->Picture->LoadFromFile("Темы//Космос//Set.jpg");
+	   MediaPlayer1->FileName="Темы//Космос//Fon.mp3";
+	   MediaPlayer2->FileName="Темы//Космос//Stat.mp3";
+
 
 
 
@@ -255,7 +277,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 void __fastcall TForm1::Timer1Timer(TObject *Sender)
 {
 	Life(MassFirst,MassSecond,SizeOfMass);
-	DrawMassWithPlaners(MassFirst,SizeOfMass,SizeOfSquare, Bitmap);
+	DrawMassWithPlaners(MassFirst,SizeOfMass,SizeOfSquare, Bitmap,FonColor,SquareColor,PlanerColor);
 	Form1->Image1->Canvas->Draw(0,0,Bitmap);
 
 }
@@ -269,7 +291,7 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 
 void __fastcall TForm1::Button3Click(TObject *Sender)
 {
-	Clear(MassFirst,MassSecond,SizeOfSquare,SizeOfMass,Bitmap,Form1->Image1->Canvas);
+	Clear(MassFirst,MassSecond,SizeOfSquare,SizeOfMass,Bitmap,Form1->Image1->Canvas,FonColor);
 }
 //---------------------------------------------------------------------------
 
@@ -310,9 +332,10 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 {
 
 
-	MediaPlayer1->Close();
+	//MediaPlayer1->Close();
 
 
+	//MediaPlayer1->Notify=false;
 
 
    if (RadioButton1->Checked==True) {
@@ -454,9 +477,17 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
    }
 
 
-   	MediaPlayer1->Open();
+
+
+	MediaPlayer1->Open();
+
+
 
    MediaPlayer1->Play();
+
+   MediaPlayer1->Notify=true;
+
+
 
 
 
@@ -642,4 +673,47 @@ void __fastcall TForm1::RadioButton10Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+
+
+void __fastcall TForm1::Button12Click(TObject *Sender)
+{
+   Timer1->Interval=1001-StrToInt(Edit1->Text);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ColorBox1Change(TObject *Sender)
+{
+	FonColor=ColorBox1->Selected;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ColorBox2Change(TObject *Sender)
+{
+   SquareColor=ColorBox2->Selected;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ColorBox3Change(TObject *Sender)
+{
+   PlanerColor=ColorBox3->Selected;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::MediaPlayer2Notify(TObject *Sender)
+{
+	//MediaPlayer2->Play();
+}
+//---------------------------------------------------------------------------
+
+
+
+
+void __fastcall TForm1::MediaPlayer1Notify(TObject *Sender)
+{
+if (MediaPlayer1->Mode==mpStopped)
+	MediaPlayer1->Play();
+}
+//---------------------------------------------------------------------------
 
