@@ -10,4 +10,15 @@
     <Transaction>1899.12.30 00:00:00.000.232,C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.681,C:\Users\IPPRV\Documents\Embarcadero\Studio\Projects\Unit1.cpp=D:\Книги\Сборник\Программирование\Курсовая работа\Курсовая V 1\Unit1.cpp</Transaction>
   </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Project1.cpp"/>
+    <File Path="Project1PCH1.h"/>
+    <File Path="Unit1.cpp"/>
+    <File Path="Unit1.cpp"/>
+    <File Path="Unit1.dfm"/>
+    <File Path="Unit1.h"/>
+    <File Path="Unit2.cpp"/>
+    <File Path="Unit2.cpp"/>
+    <File Path="Unit2.h"/>
+  </ProjectSortOrder>
 </BorlandProject>

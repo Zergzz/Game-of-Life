@@ -15,6 +15,8 @@
 
 
 
+
+void DrawMassWithUndangerPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitmap *Bitmap,TColor FonColor,TColor SquareColor,TColor PlanerColor);
 void DrawLine(int SizeOfSquare, int Width ,TBitmap *Bitmap,TCanvas *Can,TColor Clr);
 void Life(int **MassFirst, int **MassSecond,int SizeOfMass);
 void DrawSquare(TColor Clr,int X, int Y, int SizeOfSquare,TBitmap *Bitmap);

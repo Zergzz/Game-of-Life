@@ -527,6 +527,9 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 
 
 
+
+
+
 	for (i = 0; i < SizeOfMass; i++)
 	{
 		for (j = 0; j < SizeOfMass; j++)
@@ -570,6 +573,10 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 			XMass[8]=j+2;
 
 
+
+
+
+
 			for (int r = 0; r < 9; r++)
 			{
 				if (XMass[r]>=SizeOfMass)
@@ -582,6 +589,13 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 					YMass[r]=YMass[r]-SizeOfMass;
 				}
 			}
+
+
+
+
+
+
+
 
 
 
@@ -669,6 +683,8 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 
 
 
+
+
 		}
 
 
@@ -683,3 +699,337 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bool EcranInfo(int **MassFirst, int MassEcranX[16], int MassEcranY[16])
+{
+
+	for (int i = 0; i < 16; i++)
+	{
+		if (MassFirst[MassEcranX[i]][MassEcranY[i]]!=0)
+		{
+			 return false;
+		}
+
+
+	}
+
+	return true;
+
+
+
+
+}
+
+
+
+
+
+
+
+
+void DrawMassWithUndangerPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitmap *Bitmap,TColor FonColor,TColor SquareColor,TColor PlanerColor)
+{
+
+	int i;
+	int j;
+
+	int XMass[9];
+
+
+
+	int YMass[9];
+
+
+	int MassEcran;
+
+
+
+	int MassEcranX[16];
+	int MassEcranY[16];
+
+
+
+
+
+
+
+	for (i = 0; i < SizeOfMass; i++)
+	{
+		for (j = 0; j < SizeOfMass; j++)
+		{
+			if (MassFirst[i][j]== 0)
+			{
+				DrawSquare(FonColor,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
+			}
+			if (MassFirst[i][j]== 1)
+			{
+				DrawSquare(SquareColor,i*SizeOfSquare+10,j*SizeOfSquare+10,SizeOfSquare,Bitmap);
+			}
+		}
+	}
+
+
+
+	for (i = 0; i < SizeOfMass; i++)
+	{
+		for (j = 0; j < SizeOfMass; j++)
+		{
+
+
+			YMass[0]=i;
+			XMass[0]=j;
+			YMass[1]=i;
+			XMass[1]=j+1;
+			YMass[2]=i;
+			XMass[2]=j+2;
+			YMass[3]=i+1;
+			XMass[3]=j;
+			YMass[4]=i+1;
+			XMass[4]=j+1;
+			YMass[5]=i+1;
+			XMass[5]=j+2;
+			YMass[6]=i+2;
+			XMass[6]=j;
+			YMass[7]=i+2;
+			XMass[7]=j+1;
+			YMass[8]=i+2;
+			XMass[8]=j+2;
+
+
+
+			MassEcranX[0]=i-1;
+			MassEcranY[0]=j-1;
+			MassEcranX[1]=i-1;
+			MassEcranY[1]=j;
+			MassEcranX[2]=i-1;
+			MassEcranY[2]=j+1;
+			MassEcranX[3]=i-1;
+			MassEcranY[3]=j+2;
+			MassEcranX[4]=i-1;
+			MassEcranY[4]=j+3;
+			MassEcranX[5]=i;
+			MassEcranY[5]=j+3;
+			MassEcranX[6]=i+1;
+			MassEcranY[6]=j+3;
+			MassEcranX[7]=i+2;
+			MassEcranY[7]=j+3;
+			MassEcranX[8]=i+3;
+			MassEcranY[8]=j+3;
+			MassEcranX[9]=i+3;
+			MassEcranY[9]=j+2;
+			MassEcranX[10]=i+3;
+			MassEcranY[10]=j+1;
+			MassEcranX[11]=i+3;
+			MassEcranY[11]=j;
+			MassEcranX[12]=i+3;
+			MassEcranY[12]=j-1;
+			MassEcranX[13]=i+2;
+			MassEcranY[13]=j-1;
+			MassEcranX[14]=i+1;
+			MassEcranY[14]=j-1;
+			MassEcranX[15]=i;
+			MassEcranY[15]=j-1;
+
+
+
+
+
+
+
+
+			for (int r = 0; r < 9; r++)
+			{
+				if (XMass[r]>=SizeOfMass)
+				{
+					XMass[r]=XMass[r]-SizeOfMass;
+				}
+
+				if (YMass[r]>=SizeOfMass)
+				{
+					YMass[r]=YMass[r]-SizeOfMass;
+				}
+			}
+
+
+
+				for (int r = 0; r < 16; r++)
+			{
+				if (MassEcranX[r]>=SizeOfMass)
+				{
+					MassEcranX[r]=MassEcranX[r]-SizeOfMass;
+				}
+
+				if (MassEcranY[r]>=SizeOfMass)
+				{
+					MassEcranY[r]=MassEcranY[r]-SizeOfMass;
+				}
+
+
+				if (MassEcranX[r]<0)
+				{
+					MassEcranX[r]=MassEcranX[r]+SizeOfMass;
+				}
+
+				if (MassEcranY[r]<0)
+				{
+					MassEcranY[r]=MassEcranY[r]+SizeOfMass;
+				}
+
+
+
+
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+			if (EcranInfo(MassFirst,MassEcranX,MassEcranY)==true)
+			{
+
+
+
+
+
+
+
+			if ((MassFirst[XMass[0]][YMass[0]]==0) && (MassFirst[XMass[1]][YMass[1]]==1) &&
+			(MassFirst[XMass[2]][YMass[2]]==0) && (MassFirst[XMass[3]][YMass[3]]==0) &&
+			(MassFirst[XMass[4]][YMass[4]]==0) && (MassFirst[XMass[5]][YMass[5]]==1)
+			&& (MassFirst[XMass[6]][YMass[6]]==1) && (MassFirst[XMass[7]][YMass[7]]==1)
+			&& (MassFirst[XMass[8]][YMass[8]]==1))
+
+			{
+
+				DrawSquare(PlanerColor,XMass[1]*SizeOfSquare+10,YMass[1]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[5]*SizeOfSquare+10,YMass[5]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[6]*SizeOfSquare+10,YMass[6]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[7]*SizeOfSquare+10,YMass[7]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[8]*SizeOfSquare+10,YMass[8]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+
+			}
+
+
+
+			if ((MassFirst[XMass[0]][YMass[0]]==1) && (MassFirst[XMass[1]][YMass[1]]==0) &&
+			(MassFirst[XMass[2]][YMass[2]]==1) && (MassFirst[XMass[3]][YMass[3]]==0) &&
+			(MassFirst[XMass[4]][YMass[4]]==1) && (MassFirst[XMass[5]][YMass[5]]==1)
+			&& (MassFirst[XMass[6]][YMass[6]]==0) && (MassFirst[XMass[7]][YMass[7]]==1)
+			&& (MassFirst[XMass[8]][YMass[8]]==0))
+
+			{
+
+				DrawSquare(PlanerColor,XMass[0]*SizeOfSquare+10,YMass[0]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[2]*SizeOfSquare+10,YMass[2]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[4]*SizeOfSquare+10,YMass[4]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[5]*SizeOfSquare+10,YMass[5]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[7]*SizeOfSquare+10,YMass[7]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+
+			}
+
+
+			if ((MassFirst[XMass[0]][YMass[0]]==0) && (MassFirst[XMass[1]][YMass[1]]==0) &&
+			(MassFirst[XMass[2]][YMass[2]]==1) && (MassFirst[XMass[3]][YMass[3]]==1) &&
+			(MassFirst[XMass[4]][YMass[4]]==0) && (MassFirst[XMass[5]][YMass[5]]==1)
+			&& (MassFirst[XMass[6]][YMass[6]]==0) && (MassFirst[XMass[7]][YMass[7]]==1)
+			&& (MassFirst[XMass[8]][YMass[8]]==1))
+
+			{
+
+				DrawSquare(PlanerColor,XMass[2]*SizeOfSquare+10,YMass[2]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[3]*SizeOfSquare+10,YMass[3]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[5]*SizeOfSquare+10,YMass[5]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[7]*SizeOfSquare+10,YMass[7]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[8]*SizeOfSquare+10,YMass[8]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+
+			}
+
+
+			if ((MassFirst[XMass[0]][YMass[0]]==1) && (MassFirst[XMass[1]][YMass[1]]==0) &&
+			(MassFirst[XMass[2]][YMass[2]]==0) && (MassFirst[XMass[3]][YMass[3]]==0) &&
+			(MassFirst[XMass[4]][YMass[4]]==1) && (MassFirst[XMass[5]][YMass[5]]==1)
+			&& (MassFirst[XMass[6]][YMass[6]]==1) && (MassFirst[XMass[7]][YMass[7]]==1)
+			&& (MassFirst[XMass[8]][YMass[8]]==0))
+
+			{
+
+				DrawSquare(PlanerColor,XMass[0]*SizeOfSquare+10,YMass[0]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[4]*SizeOfSquare+10,YMass[4]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[5]*SizeOfSquare+10,YMass[5]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[6]*SizeOfSquare+10,YMass[6]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+				DrawSquare(PlanerColor,XMass[7]*SizeOfSquare+10,YMass[7]*SizeOfSquare+10,SizeOfSquare,Bitmap);
+
+			}
+
+
+			}
+
+
+		}
+
+
+
+
+
+	}
+
+
+
+
+
+
+}
+
