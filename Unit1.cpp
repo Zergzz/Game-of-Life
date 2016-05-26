@@ -279,6 +279,8 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 	Life(MassFirst,MassSecond,SizeOfMass);
 	DrawMassWithUndangerPlaners(MassFirst,SizeOfMass,SizeOfSquare, Bitmap,FonColor,SquareColor,PlanerColor);
 	Form1->Image1->Canvas->Draw(0,0,Bitmap);
+	if (MediaPlayer1->Mode==mpStopped)
+	MediaPlayer1->Play();
 
 }
 //---------------------------------------------------------------------------
@@ -712,8 +714,14 @@ void __fastcall TForm1::MediaPlayer2Notify(TObject *Sender)
 
 void __fastcall TForm1::MediaPlayer1Notify(TObject *Sender)
 {
-if (MediaPlayer1->Mode==mpStopped)
-	MediaPlayer1->Play();
+//if (MediaPlayer1->Mode==mpStopped)
+//	MediaPlayer1->Play();
 }
 //---------------------------------------------------------------------------
+
+
+
+
+
+
 

@@ -66,6 +66,9 @@ __published:	// IDE-managed Components
 	TXPColorMap *XPColorMap1;
 	TColorBox *ColorBox2;
 	TColorBox *ColorBox3;
+	TLabel *Label5;
+	TLabel *Label6;
+	TLabel *Label7;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Button1Click(TObject *Sender);
@@ -95,6 +98,9 @@ __published:	// IDE-managed Components
 	void __fastcall ColorBox3Change(TObject *Sender);
 	void __fastcall MediaPlayer2Notify(TObject *Sender);
 	void __fastcall MediaPlayer1Notify(TObject *Sender);
+
+
+
 
 
 

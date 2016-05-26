@@ -23,14 +23,11 @@ object Form1: TForm1
     Width = 1150
     Height = 784
     Align = alClient
-    PageIndex = 1
     TabOrder = 0
     object TPage
       Left = 0
       Top = 0
       Caption = 'Menu'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Image3: TImage
         Left = 0
         Top = 0
@@ -50,6 +47,8 @@ object Form1: TForm1
         Top = 275
         Width = 177
         Height = 322
+        Color = clWhite
+        ParentBackground = False
         TabOrder = 0
         object Button8: TButton
           Left = 56
@@ -122,8 +121,8 @@ object Form1: TForm1
         OnMouseMove = Image1MouseMove
       end
       object Label4: TLabel
-        Left = 296
-        Top = 436
+        Left = 272
+        Top = 404
         Width = 34
         Height = 13
         Caption = '1-1000'
@@ -134,6 +133,45 @@ object Form1: TForm1
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentColor = False
+        ParentFont = False
+      end
+      object Label5: TLabel
+        Left = 80
+        Top = 483
+        Width = 20
+        Height = 13
+        Caption = #1060#1086#1085
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label6: TLabel
+        Left = 80
+        Top = 523
+        Width = 37
+        Height = 13
+        Caption = #1050#1083#1077#1090#1082#1080
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label7: TLabel
+        Left = 80
+        Top = 571
+        Width = 45
+        Height = 13
+        Caption = #1055#1083#1072#1085#1077#1088#1099
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
         ParentFont = False
       end
       object Button1: TButton
@@ -193,8 +231,8 @@ object Form1: TForm1
         OnClick = Button12Click
       end
       object Edit1: TEdit
-        Left = 280
-        Top = 455
+        Left = 257
+        Top = 431
         Width = 65
         Height = 21
         TabOrder = 6
@@ -204,6 +242,7 @@ object Form1: TForm1
         Top = 480
         Width = 128
         Height = 22
+        Selected = clWhite
         TabOrder = 7
         OnChange = ColorBox1Change
       end
@@ -212,6 +251,7 @@ object Form1: TForm1
         Top = 520
         Width = 145
         Height = 22
+        Selected = clRed
         TabOrder = 8
         OnChange = ColorBox2Change
       end
@@ -220,6 +260,7 @@ object Form1: TForm1
         Top = 568
         Width = 145
         Height = 22
+        Selected = clBlue
         TabOrder = 9
         OnChange = ColorBox3Change
       end
@@ -228,8 +269,6 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Caption = 'Options'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Image5: TImage
         Left = 0
         Top = 0
@@ -406,8 +445,6 @@ object Form1: TForm1
       Left = 0
       Top = 0
       Caption = 'S'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Image2: TImage
         Left = 0
         Top = 0
