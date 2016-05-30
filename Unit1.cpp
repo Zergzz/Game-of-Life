@@ -35,6 +35,12 @@ Graphics::TBitmap   *Bitmap = new Graphics::TBitmap;
 
 Graphics::TBitmap   *Fon = new Graphics::TBitmap;
 
+
+Graphics::TBitmap   *Squar = new Graphics::TBitmap;
+
+Graphics::TBitmap   *Planer = new Graphics::TBitmap;
+
+
 TJPEGImage *examp = new TJPEGImage;
 
 
@@ -67,9 +73,15 @@ TColor PlanerColor;
 
 
 
+
+
+
+
 void ChangeSquareMove(int **MassFirst ,int SizeOfSquare , int X, int Y/*,int *FirstSquare, int *PastNumSquareX, int *PastNumSquareY,TCanvas *Can*/)
 {
 
+try
+{
 
 	if ((PastNumSquareX != X / SizeOfSquare) || (PastNumSquareY != Y/ SizeOfSquare) || (FirstSquare == -1))
 	{
@@ -120,7 +132,19 @@ void ChangeSquareMove(int **MassFirst ,int SizeOfSquare , int X, int Y/*,int *Fi
 
 	if (MassFirst[X/SizeOfSquare][Y/SizeOfSquare]==1)
 	{
-		DrawSquare(SquareColor,X,Y,SizeOfSquare,Bitmap);
+
+
+		DrawImage(X,Y,SizeOfSquare,Bitmap,Squar);
+
+	   //	if (Form1->CheckBox2->Checked==true)
+	   //	{
+	  //		DrawImage(SquareColor,X,Y,SizeOfSquare,Bitmap,Squar);
+	 //	}
+	 //	else
+	 //	{
+	//		DrawSquare(SquareColor,X,Y,SizeOfSquare,Bitmap);
+	//	}
+
 		Form1->Image1->Canvas->Draw(0,0,Bitmap);
 	}
 
@@ -135,6 +159,11 @@ void ChangeSquareMove(int **MassFirst ,int SizeOfSquare , int X, int Y/*,int *Fi
 	}
 
 	}
+	}
+	catch(...)
+	{
+		  int k;
+    }
 }
 
 
@@ -182,6 +211,28 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 
 
 	}
+
+
+
+
+
+
+	Squar->Width=18;
+	Squar->Height=18;
+
+	Planer->Width=18;
+	Planer->Height=18;
+
+
+	Squar->Canvas->Pen->Color=SquareColor;
+	Squar->Canvas->Brush->Color=SquareColor;
+	Squar->Canvas->Rectangle(0,0,78,78);
+
+	Planer->Canvas->Pen->Color=PlanerColor;
+	Planer->Canvas->Brush->Color=PlanerColor;
+	Planer->Canvas->Rectangle(0,0,78,78);
+
+
 
 	PastNumSquareX=-1;
 	PastNumSquareY=-1;
@@ -271,13 +322,15 @@ void __fastcall TForm1::Image1MouseMove(TObject *Sender, TShiftState Shift, int 
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
    Timer1->Enabled=True;
+   FirstSquare=1;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Timer1Timer(TObject *Sender)
 {
 	Life(MassFirst,MassSecond,SizeOfMass);
-	DrawMassWithUndangerPlaners(MassFirst,SizeOfMass,SizeOfSquare, Bitmap,FonColor,SquareColor,PlanerColor);
+	//DrawMassWithUndangerPlaners(MassFirst,SizeOfMass,SizeOfSquare, Bitmap,FonColor,SquareColor,PlanerColor);
+	DrawMassWithUndangerPlanersAndImage(MassFirst,SizeOfMass,SizeOfSquare, Bitmap,FonColor,Squar,Planer);
 	Form1->Image1->Canvas->Draw(0,0,Bitmap);
 	if (MediaPlayer1->Mode==mpStopped)
 	MediaPlayer1->Play();
@@ -288,12 +341,15 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 void __fastcall TForm1::Button2Click(TObject *Sender)
 {
 	Timer1->Enabled=False;
+	FirstSquare=1;
+
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Button3Click(TObject *Sender)
 {
 	Clear(MassFirst,MassSecond,SizeOfSquare,SizeOfMass,Bitmap,Form1->Image1->Canvas,FonColor);
+	FirstSquare=1;
 }
 //---------------------------------------------------------------------------
 
@@ -309,6 +365,7 @@ void __fastcall TForm1::Button4Click(TObject *Sender)
 void __fastcall TForm1::Button9Click(TObject *Sender)
 {
    Notebook1->PageIndex=0;
+   Timer1->Enabled=false;
 }
 //---------------------------------------------------------------------------
 
@@ -346,6 +403,16 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 	  Form1->Image2->Picture->LoadFromFile("Темы//Чеширский кот//Stat.jpg");
 	  MediaPlayer1->FileName="Темы//Чеширский кот//Fon.mp3";
 	  MediaPlayer2->FileName="Темы//Чеширский кот//Stat.mp3";
+
+	  ColorBox1->Selected=clWhite;
+	  ColorBox2->Selected=clBlack;
+	  ColorBox3->Selected=clRed;
+	  FonColor=clWhite;
+	  SquareColor=clBlack;
+	  PlanerColor=clRed;
+
+
+
 	  //Form1->Image5->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
 
 	  //CheckBox1->Enabled=False;
@@ -362,6 +429,13 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 	  Form1->Image2->Picture->LoadFromFile("Темы//Тёмный лес//Stat.jpg");
 	  MediaPlayer1->FileName="Темы//Тёмный лес//Fon.mp3";
 	  MediaPlayer2->FileName="Темы//Тёмный лес//Stat.mp3";
+      ColorBox1->Selected=clWhite;
+	  ColorBox2->Selected=clGray;
+	  ColorBox3->Selected=clBlack;
+	  FonColor=clWhite;
+	  SquareColor=clGray;
+	  PlanerColor=clBlack;
+
 	  //Form1->Image5->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
 
 	  //CheckBox1->Enabled=False;
@@ -377,28 +451,50 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 	   Form1->Image2->Picture->LoadFromFile("Темы//Космос//Stat.jpg");
 	   MediaPlayer1->FileName="Темы//Космос//Fon.mp3";
 	   MediaPlayer2->FileName="Темы//Космос//Stat.mp3";
+	   ColorBox1->Selected=clWhite;
+	   ColorBox2->Selected=clRed;
+	   ColorBox3->Selected=clBlue;
+	   FonColor=clWhite;
+	   SquareColor=clRed;
+	   PlanerColor=clBlue;
 	   //Form1->Image4->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
 	   //CheckBox1->Enabled=True;
 
    }
 
 
-   if (RadioButton3->Checked==True) {
-	  Form1->Image3->Picture->LoadFromFile("Темы//Огонь//Fon.jpg");
+   if (RadioButton3->Checked==True)
+   {
+	   Form1->Image3->Picture->LoadFromFile("Темы//Огонь//Fon.jpg");
 	   Form1->Image4->Picture->LoadFromFile("Темы//Огонь//Fon.jpg");
 	   Form1->Image2->Picture->LoadFromFile("Темы//Огонь//Stat.jpg");
 	   MediaPlayer1->FileName="Темы//Огонь//Fon.mp3";
 	   MediaPlayer2->FileName="Темы//Огонь//Stat.mp3";
 
+	   ColorBox1->Selected=clWhite;
+	   ColorBox2->Selected=clRed;
+	   ColorBox3->Selected=clBlue;
+	   FonColor=clWhite;
+	   SquareColor=clRed;
+	   PlanerColor=clBlue;
+
    }
 
 
-	if (RadioButton4->Checked==True) {
-	  Form1->Image3->Picture->LoadFromFile("Темы//Вода//Fon.jpg");
+	if (RadioButton4->Checked==True)
+	{
+	   Form1->Image3->Picture->LoadFromFile("Темы//Вода//Fon.jpg");
 	   Form1->Image4->Picture->LoadFromFile("Темы//Вода//Fon.jpg");
 	   Form1->Image2->Picture->LoadFromFile("Темы//Вода//Stat.jpg");
 	   MediaPlayer1->FileName="Темы//Вода//Fon.mp3";
 	   MediaPlayer2->FileName="Темы//Вода//Stat.mp3";
+
+	   ColorBox1->Selected=clWhite;
+	  ColorBox2->Selected=clGreen;
+	  ColorBox3->Selected=clBlue;
+	  FonColor=clWhite;
+	  SquareColor=clGreen;
+	  PlanerColor=clBlue;
 
    }
 
@@ -408,6 +504,14 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 	   Form1->Image2->Picture->LoadFromFile("Темы//Тропический рай//Stat.jpg");
 	   MediaPlayer1->FileName="Темы//Тропический рай//Fon.mp3";
 	   MediaPlayer2->FileName="Темы//Тропический рай//Stat.mp3";
+
+       ColorBox1->Selected=clWhite;
+	  ColorBox2->Selected=clYellow;
+	  ColorBox3->Selected=clGreen;
+	  FonColor=clWhite;
+	  SquareColor=clYellow;
+	  PlanerColor=clGreen;
+
 
    }
 
@@ -419,6 +523,14 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 	   Form1->Image2->Picture->LoadFromFile("Темы//Лес//Stat.jpg");
 	   MediaPlayer1->FileName="Темы//Лес//Fon.mp3";
 	   MediaPlayer2->FileName="Темы//Лес//Stat.mp3";
+
+
+	   ColorBox1->Selected=clWhite;
+	  ColorBox2->Selected=clGreen;
+	  ColorBox3->Selected=clYellow;
+	  FonColor=clWhite;
+	  SquareColor=clGreen;
+	  PlanerColor=clYellow;
 
    }
 
@@ -433,6 +545,15 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 	   //Form1->Image4->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
 	   //CheckBox1->Enabled=True;
 
+
+       ColorBox1->Selected=clWhite;
+	  ColorBox2->Selected=clBlue;
+	  ColorBox3->Selected=clHighlight;
+	  FonColor=clWhite;
+	  SquareColor=clHighlight;
+	  PlanerColor=clRed;
+
+
    }
 
 
@@ -444,6 +565,16 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 	   Form1->Image2->Picture->LoadFromFile("Темы//Воздух//Stat.jpg");
 	   MediaPlayer1->FileName="Темы//Воздух//Fon.mp3";
 	   MediaPlayer2->FileName="Темы//Воздух//Stat.mp3";
+
+
+       ColorBox1->Selected=clWhite;
+	  ColorBox2->Selected=clCream;
+	  ColorBox3->Selected=clBlue;
+	  FonColor=clWhite;
+	  SquareColor=clCream;
+	  PlanerColor=clBlue;
+
+
 	   //Form1->Image4->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
 	   //CheckBox1->Enabled=True;
 
@@ -462,6 +593,17 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 	   //Form1->Image4->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
 	   //CheckBox1->Enabled=True;
 
+
+
+       ColorBox1->Selected=clWhite;
+	  ColorBox2->Selected=clGray;
+	  ColorBox3->Selected=clBlack;
+	  FonColor=clWhite;
+	  SquareColor=clGray;
+	  PlanerColor=clBlack;
+
+
+
    }
 
 
@@ -475,6 +617,15 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 	   MediaPlayer2->FileName="Темы//Зима//Stat.mp3";
 	   //Form1->Image4->Picture->LoadFromFile("Темы//Чеширский кот//Set.jpg");
 	   //CheckBox1->Enabled=True;
+
+
+       ColorBox1->Selected=clWhite;
+	  ColorBox2->Selected=clCream;
+	  ColorBox3->Selected=clBlue;
+	  FonColor=clWhite;
+	  SquareColor=clCream;
+	  PlanerColor=clBlue;
+
 
    }
 
@@ -491,6 +642,12 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 
 
 
+   	Squar->Canvas->Pen->Color=SquareColor;
+	Squar->Canvas->Brush->Color=SquareColor;
+	Squar->Canvas->Rectangle(0,0,78,78);
+	Planer->Canvas->Pen->Color=PlanerColor;
+	Planer->Canvas->Brush->Color=PlanerColor;
+	Planer->Canvas->Rectangle(0,0,78,78);
 
 
 
@@ -681,24 +838,34 @@ void __fastcall TForm1::RadioButton10Click(TObject *Sender)
 void __fastcall TForm1::Button12Click(TObject *Sender)
 {
    Timer1->Interval=1001-StrToInt(Edit1->Text);
+   FirstSquare=1;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::ColorBox1Change(TObject *Sender)
 {
 	FonColor=ColorBox1->Selected;
+	FirstSquare=1;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::ColorBox2Change(TObject *Sender)
 {
    SquareColor=ColorBox2->Selected;
+   Squar->Canvas->Pen->Color=SquareColor;
+	Squar->Canvas->Brush->Color=SquareColor;
+	Squar->Canvas->Rectangle(0,0,78,78);
+   FirstSquare=1;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::ColorBox3Change(TObject *Sender)
 {
    PlanerColor=ColorBox3->Selected;
+   Planer->Canvas->Pen->Color=PlanerColor;
+	Planer->Canvas->Brush->Color=PlanerColor;
+	Planer->Canvas->Rectangle(0,0,78,78);
+   FirstSquare=1;
 }
 //---------------------------------------------------------------------------
 
@@ -724,4 +891,230 @@ void __fastcall TForm1::MediaPlayer1Notify(TObject *Sender)
 
 
 
+
+
+
+void __fastcall TForm1::RadioButton13Click(TObject *Sender)
+{
+
+
+	Squar->Width=78;
+	Squar->Height=78;
+	Squar->Canvas->Pen->Color=SquareColor;
+	Squar->Canvas->Brush->Color=SquareColor;
+	Squar->Canvas->Rectangle(0,0,78,78);
+
+	Planer->Width=78;
+	Planer->Height=78;
+	Planer->Canvas->Pen->Color=PlanerColor;
+	Planer->Canvas->Brush->Color=PlanerColor;
+	Planer->Canvas->Rectangle(0,0,78,78);
+
+
+
+
+	Clear(MassFirst,MassSecond,SizeOfSquare,SizeOfMass,Bitmap,Form1->Image1->Canvas,FonColor);
+
+
+
+
+	SizeOfSquare=80;
+
+
+
+	SizeOfMass= Image1->Width/SizeOfSquare;
+	MassFirst = new int*[SizeOfMass];
+	MassSecond = new int*[SizeOfMass];
+
+
+	int i;
+
+	for (i = 0; i < SizeOfMass; i++)
+	{
+		MassFirst[i] = new int[SizeOfMass];
+		MassSecond[i] = new int[SizeOfMass];
+
+	}
+
+
+	int j;
+
+	for (i = 0; i < SizeOfMass; i++)
+	{
+		for (j = 0; i < SizeOfMass; i++)
+		{
+			MassFirst[i][j]=0;
+			MassSecond[i][j]=0;
+
+		}
+
+
+
+	}
+
+
+
+	//CheckBox2->Enabled=true;
+	//Button14->Enabled=true;
+
+
+	FirstSquare=1;
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::RadioButton11Click(TObject *Sender)
+{
+
+	Squar->Width=18;
+	Squar->Height=18;
+	Squar->Canvas->Pen->Color=SquareColor;
+	Squar->Canvas->Brush->Color=SquareColor;
+	Squar->Canvas->Rectangle(0,0,18,18);
+
+	Planer->Width=18;
+	Planer->Height=18;
+	Planer->Canvas->Pen->Color=PlanerColor;
+	Planer->Canvas->Brush->Color=PlanerColor;
+	Planer->Canvas->Rectangle(0,0,18,18);
+
+
+	Clear(MassFirst,MassSecond,SizeOfSquare,SizeOfMass,Bitmap,Form1->Image1->Canvas,FonColor);
+	SizeOfSquare=20;
+	SizeOfMass= Image1->Width/SizeOfSquare;
+	MassFirst = new int*[SizeOfMass];
+	MassSecond = new int*[SizeOfMass];
+
+	int i;
+	for (i = 0; i < SizeOfMass; i++)
+	{
+		MassFirst[i] = new int[SizeOfMass];
+		MassSecond[i] = new int[SizeOfMass];
+
+	}
+
+	int j;
+
+	for (i = 0; i < SizeOfMass; i++)
+	{
+		for (j = 0; i < SizeOfMass; i++)
+		{
+			MassFirst[i][j]=0;
+			MassSecond[i][j]=0;
+
+		}
+
+
+
+	}
+
+	FirstSquare=1;
+
+
+
+	//CheckBox2->Enabled=false;
+	//Button14->Enabled=false;
+
+
+
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Image4Click(TObject *Sender)
+{
+   FirstSquare=1;
+
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Edit1Click(TObject *Sender)
+{
+   FirstSquare=1;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ColorBox1Click(TObject *Sender)
+{
+   FirstSquare=1;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ColorBox2Click(TObject *Sender)
+{
+   FirstSquare=1;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ColorBox3Click(TObject *Sender)
+{
+   FirstSquare=1;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button14Click(TObject *Sender)
+{
+	 if (OpenPictureDialog1->Execute())
+	 {
+
+		Squar->LoadFromFile(OpenPictureDialog1->FileName);
+
+		//Form1->Image6->Picture->LoadFromFile(OpenPictureDialog1->FileName);
+		//Squar->Canvas->Draw(0,0,Image6);
+		//Image6->Picture->Assign(Squar->Canvas);
+		//Form1->Image1->Canvas->Draw(0,0,Squar);
+	 }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button15Click(TObject *Sender)
+{
+    if (OpenPictureDialog1->Execute())
+	 {
+
+		Planer->LoadFromFile(OpenPictureDialog1->FileName);
+
+		//Form1->Image6->Picture->LoadFromFile(OpenPictureDialog1->FileName);
+		//Squar->Canvas->Draw(0,0,Image6);
+		//Image6->Picture->Assign(Squar->Canvas);
+		//Form1->Image1->Canvas->Draw(0,0,Squar);
+	 }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button17Click(TObject *Sender)
+{
+    Notebook1->PageIndex=0;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button7Click(TObject *Sender)
+{
+   Notebook1->PageIndex=4;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button13Click(TObject *Sender)
+{
+
+   FILE *F;
+
+	char StrIn[16];
+	StrIn[0]='0';
+	StrIn[1]='%';
+	StrIn[2]='0';
+	StrIn[3]='%';
+	StrIn[4]='\0';
+
+
+	F=fopen("Stat.txt","w+");
+
+	fputs(StrIn,F);
+
+	fclose(F);
+
+}
+//---------------------------------------------------------------------------
 

@@ -15,7 +15,10 @@
 #include <string.h>
 #include <Vcl.ActnColorMaps.hpp>
 #include <Vcl.ActnMan.hpp>
+#include <Vcl.Dialogs.hpp>
+#include <Vcl.ExtDlgs.hpp>
 #include <iostream>
+
 
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
@@ -37,7 +40,6 @@ __published:	// IDE-managed Components
 	TMediaPlayer *MediaPlayer1;
 	TButton *Button9;
 	TPanel *Panel2;
-	TCheckBox *CheckBox1;
 	TButton *Button10;
 	TImage *Image2;
 	TMediaPlayer *MediaPlayer2;
@@ -57,7 +59,6 @@ __published:	// IDE-managed Components
 	TRadioButton *RadioButton8;
 	TRadioButton *RadioButton9;
 	TRadioButton *RadioButton10;
-	TRadioButton *RadioButton12;
 	TButton *Button12;
 	TEdit *Edit1;
 	TLabel *Label4;
@@ -69,6 +70,20 @@ __published:	// IDE-managed Components
 	TLabel *Label5;
 	TLabel *Label6;
 	TLabel *Label7;
+	TRadioButton *RadioButton11;
+	TRadioButton *RadioButton13;
+	TLabel *Label8;
+	TLabel *Label9;
+	TButton *Button14;
+	TOpenPictureDialog *OpenPictureDialog1;
+	TButton *Button15;
+	TLabel *Label10;
+	TLabel *Label11;
+	TEdit *Edit2;
+	TButton *Button16;
+	TButton *Button17;
+	TLabel *Label12;
+	TButton *Button13;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Button1Click(TObject *Sender);
@@ -98,6 +113,18 @@ __published:	// IDE-managed Components
 	void __fastcall ColorBox3Change(TObject *Sender);
 	void __fastcall MediaPlayer2Notify(TObject *Sender);
 	void __fastcall MediaPlayer1Notify(TObject *Sender);
+	void __fastcall RadioButton13Click(TObject *Sender);
+	void __fastcall RadioButton11Click(TObject *Sender);
+	void __fastcall Image4Click(TObject *Sender);
+	void __fastcall Edit1Click(TObject *Sender);
+	void __fastcall ColorBox1Click(TObject *Sender);
+	void __fastcall ColorBox2Click(TObject *Sender);
+	void __fastcall ColorBox3Click(TObject *Sender);
+	void __fastcall Button14Click(TObject *Sender);
+	void __fastcall Button15Click(TObject *Sender);
+	void __fastcall Button17Click(TObject *Sender);
+	void __fastcall Button7Click(TObject *Sender);
+	void __fastcall Button13Click(TObject *Sender);
 
 
 
