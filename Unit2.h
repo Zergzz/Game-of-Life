@@ -12,6 +12,7 @@
 #include <conio.h>
 #include <string.h>
 #include <iostream>
+#include <Vcl.Dialogs.hpp>
 
 
 
@@ -25,7 +26,7 @@ void Clear(int **MassFirst,int **MassSecond,int SizeOfSquare,int SizeOfMass,TBit
 void DrawMass(int **MassFirst, int SizeOfMass, int SizeOfSquare  ,TBitmap *Bitmap,TColor FonColor, TColor SquareColor);
 void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitmap *Bitmap,TColor FonColor,TColor SquareColor,TColor PlanerColor);
 void DrawMassWithUndangerPlanersAndImage(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitmap *Bitmap,TColor FonColor,TBitmap *Squar, TBitmap *Planer);
-
+void CreateMass(int **MassFirst, int **MassSecond, int SizeOfMass);
 
 
 

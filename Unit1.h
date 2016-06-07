@@ -84,6 +84,7 @@ __published:	// IDE-managed Components
 	TButton *Button17;
 	TLabel *Label12;
 	TButton *Button13;
+	TOpenDialog *OpenDialog1;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Image1MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 	void __fastcall Button1Click(TObject *Sender);
@@ -111,8 +112,6 @@ __published:	// IDE-managed Components
 	void __fastcall ColorBox1Change(TObject *Sender);
 	void __fastcall ColorBox2Change(TObject *Sender);
 	void __fastcall ColorBox3Change(TObject *Sender);
-	void __fastcall MediaPlayer2Notify(TObject *Sender);
-	void __fastcall MediaPlayer1Notify(TObject *Sender);
 	void __fastcall RadioButton13Click(TObject *Sender);
 	void __fastcall RadioButton11Click(TObject *Sender);
 	void __fastcall Image4Click(TObject *Sender);

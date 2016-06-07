@@ -23,10 +23,8 @@ object Form1: TForm1
     Width = 1150
     Height = 784
     Align = alClient
-    PageIndex = 2
+    PageIndex = 1
     TabOrder = 0
-    ExplicitLeft = 88
-    ExplicitTop = 48
     object TPage
       Left = 0
       Top = 0
@@ -113,12 +111,13 @@ object Form1: TForm1
         AutoSize = True
         Center = True
         OnClick = Image4Click
-        ExplicitTop = 8
+        ExplicitLeft = 40
+        ExplicitTop = 40
       end
       object Image1: TImage
         AlignWithMargins = True
-        Left = 379
-        Top = 24
+        Left = 348
+        Top = -10
         Width = 802
         Height = 802
         Center = True
@@ -126,11 +125,11 @@ object Form1: TForm1
       end
       object Label4: TLabel
         Left = 272
-        Top = 404
+        Top = 412
         Width = 34
         Height = 13
         Caption = '1-1000'
-        Color = clWhite
+        Color = clBlack
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clHighlightText
         Font.Height = -11
@@ -179,12 +178,12 @@ object Form1: TForm1
         ParentFont = False
       end
       object Label8: TLabel
-        Left = 171
-        Top = 642
+        Left = 179
+        Top = 618
         Width = 40
         Height = 13
         Caption = #1052#1077#1085#1100#1096#1077
-        Color = clWhite
+        Color = clBlack
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
         Font.Height = -11
@@ -194,12 +193,12 @@ object Form1: TForm1
         ParentFont = False
       end
       object Label9: TLabel
-        Left = 170
-        Top = 661
+        Left = 179
+        Top = 637
         Width = 38
         Height = 13
         Caption = #1041#1086#1083#1100#1096#1077
-        Color = clWhite
+        Color = clBlack
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
         Font.Height = -11
@@ -209,12 +208,12 @@ object Form1: TForm1
         ParentFont = False
       end
       object Label10: TLabel
-        Left = 106
-        Top = 709
+        Left = 122
+        Top = 685
         Width = 37
         Height = 13
         Caption = #1050#1083#1077#1090#1082#1072
-        Color = clWhite
+        Color = clBlack
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindow
         Font.Height = -11
@@ -224,12 +223,12 @@ object Form1: TForm1
         ParentFont = False
       end
       object Label11: TLabel
-        Left = 106
-        Top = 749
+        Left = 122
+        Top = 725
         Width = 37
         Height = 13
         Caption = #1055#1083#1072#1085#1077#1088
-        Color = clWhite
+        Color = clBlack
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
         Font.Height = -11
@@ -274,7 +273,6 @@ object Form1: TForm1
         Visible = False
         ParentDoubleBuffered = False
         TabOrder = 3
-        OnNotify = MediaPlayer1Notify
       end
       object Button9: TButton
         Left = 144
@@ -286,7 +284,7 @@ object Form1: TForm1
         OnClick = Button9Click
       end
       object Button12: TButton
-        Left = 136
+        Left = 144
         Top = 429
         Width = 75
         Height = 25
@@ -333,8 +331,8 @@ object Form1: TForm1
         OnClick = ColorBox3Click
       end
       object RadioButton11: TRadioButton
-        Left = 149
-        Top = 641
+        Left = 158
+        Top = 617
         Width = 15
         Height = 17
         Checked = True
@@ -351,8 +349,8 @@ object Form1: TForm1
         OnClick = RadioButton11Click
       end
       object RadioButton13: TRadioButton
-        Left = 149
-        Top = 664
+        Left = 158
+        Top = 640
         Width = 15
         Height = 17
         Caption = 'RadioButton13'
@@ -360,8 +358,8 @@ object Form1: TForm1
         OnClick = RadioButton13Click
       end
       object Button14: TButton
-        Left = 149
-        Top = 704
+        Left = 165
+        Top = 680
         Width = 75
         Height = 25
         Caption = #1047#1072#1075#1088#1091#1079#1080#1090#1100
@@ -369,8 +367,8 @@ object Form1: TForm1
         OnClick = Button14Click
       end
       object Button15: TButton
-        Left = 149
-        Top = 744
+        Left = 165
+        Top = 720
         Width = 75
         Height = 25
         Caption = #1047#1072#1075#1088#1091#1079#1080#1090#1100
@@ -389,22 +387,19 @@ object Form1: TForm1
         Height = 784
         Align = alClient
         Center = True
-        ExplicitLeft = 344
-        ExplicitTop = 528
-        ExplicitWidth = 105
-        ExplicitHeight = 105
+        ExplicitTop = -48
       end
       object Panel2: TPanel
-        Left = 504
-        Top = 112
+        Left = 528
+        Top = 104
         Width = 337
-        Height = 561
+        Height = 457
         Color = clWhite
         ParentBackground = False
         TabOrder = 0
         object Label3: TLabel
-          Left = 98
-          Top = 7
+          Left = 138
+          Top = 39
           Width = 39
           Height = 19
           Caption = #1058#1077#1084#1099
@@ -416,8 +411,8 @@ object Form1: TForm1
           ParentFont = False
         end
         object Button10: TButton
-          Left = 134
-          Top = 456
+          Left = 126
+          Top = 384
           Width = 75
           Height = 25
           Caption = #1054#1050
@@ -425,10 +420,10 @@ object Form1: TForm1
           OnClick = Button10Click
         end
         object GroupBox1: TGroupBox
-          Left = 56
-          Top = 55
-          Width = 193
-          Height = 362
+          Left = 88
+          Top = 79
+          Width = 161
+          Height = 266
           TabOrder = 1
           object RadioButton1: TRadioButton
             Left = 21
@@ -494,7 +489,7 @@ object Form1: TForm1
             OnClick = RadioButton7Click
           end
           object RadioButton8: TRadioButton
-            Left = 24
+            Left = 21
             Top = 177
             Width = 113
             Height = 17
@@ -534,11 +529,11 @@ object Form1: TForm1
         Height = 784
         Align = alClient
         Center = True
-        ExplicitLeft = 16
-        ExplicitTop = 16
+        ExplicitLeft = 128
+        ExplicitTop = 96
       end
       object Label1: TLabel
-        Left = 472
+        Left = 600
         Top = 104
         Width = 141
         Height = 40
@@ -551,7 +546,7 @@ object Form1: TForm1
         ParentFont = False
       end
       object Label2: TLabel
-        Left = 472
+        Left = 600
         Top = 160
         Width = 111
         Height = 40
@@ -564,7 +559,7 @@ object Form1: TForm1
         ParentFont = False
       end
       object Button11: TButton
-        Left = 656
+        Left = 528
         Top = 664
         Width = 75
         Height = 25
@@ -573,7 +568,7 @@ object Form1: TForm1
         OnClick = Button11Click
       end
       object Button13: TButton
-        Left = 776
+        Left = 760
         Top = 664
         Width = 75
         Height = 25
@@ -585,15 +580,13 @@ object Form1: TForm1
     object TPage
       Left = 0
       Top = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label12: TLabel
-        Left = 488
-        Top = 296
+        Left = 616
+        Top = 376
         Width = 116
         Height = 19
         Caption = #1042#1074#1077#1076#1080#1090#1077' '#1087#1072#1088#1086#1083#1100
-        Color = clWhite
+        Color = clBlack
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clCream
         Font.Height = 19
@@ -603,24 +596,24 @@ object Form1: TForm1
         ParentFont = False
       end
       object Edit2: TEdit
-        Left = 488
-        Top = 360
+        Left = 616
+        Top = 424
         Width = 121
         Height = 21
         MaxLength = 4
         TabOrder = 0
       end
       object Button16: TButton
-        Left = 512
-        Top = 408
+        Left = 640
+        Top = 472
         Width = 75
         Height = 25
         Caption = #1054#1082
         TabOrder = 1
       end
       object Button17: TButton
-        Left = 512
-        Top = 448
+        Left = 640
+        Top = 520
         Width = 75
         Height = 25
         Caption = #1054#1090#1084#1077#1085#1072
@@ -638,7 +631,6 @@ object Form1: TForm1
     Visible = False
     ParentDoubleBuffered = False
     TabOrder = 1
-    OnNotify = MediaPlayer2Notify
   end
   object Timer1: TTimer
     Enabled = False
@@ -655,7 +647,15 @@ object Form1: TForm1
     Top = 168
   end
   object OpenPictureDialog1: TOpenPictureDialog
+    Options = [ofHideReadOnly, ofNoChangeDir, ofEnableSizing]
     Left = 424
     Top = 584
+  end
+  object OpenDialog1: TOpenDialog
+    Ctl3D = False
+    Options = [ofReadOnly, ofOverwritePrompt, ofNoChangeDir, ofShowHelp, ofNoValidate, ofAllowMultiSelect, ofExtensionDifferent, ofPathMustExist, ofFileMustExist, ofCreatePrompt, ofShareAware, ofNoReadOnlyReturn, ofNoTestFileCreate, ofNoNetworkButton, ofNoLongNames, ofNoDereferenceLinks, ofEnableIncludeNotify, ofEnableSizing, ofDontAddToRecent, ofForceShowHidden]
+    OptionsEx = [ofExNoPlacesBar]
+    Left = 56
+    Top = 384
   end
 end

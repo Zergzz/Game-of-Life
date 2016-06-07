@@ -32,11 +32,100 @@ void DrawLine(int SizeOfSquare, int Width ,TBitmap *Bitmap,TCanvas *Can,TColor C
 		Bitmap->Canvas->LineTo(Width,i);
 	}
 
-	//Bitmap->Canvas->Pen->Color=clWhite;
-   //	Bitmap->Canvas->Brush->Color=clWhite;
 	Can->Draw(0,0,Bitmap);
 }
 
+
+
+
+
+void CreateMass(int **MassFirst, int **MassSecond, int SizeOfMass)
+{
+
+   MassFirst = new int*[SizeOfMass];
+
+	if (MassFirst==NULL)
+	{
+		ShowMessage("Нет памяти");
+		exit(0);
+	}
+
+
+	MassSecond = new int*[SizeOfMass];
+
+	if (MassSecond==NULL)
+	{
+		 ShowMessage("Нет памяти");
+		 free(MassFirst);
+	}
+
+
+	for (int i = 0; i < SizeOfMass; i++)
+	{
+		MassFirst[i] = new int[SizeOfMass];
+		if (MassFirst[i]==NULL)
+		{
+			ShowMessage("Нет памяти");
+
+			for (int j = 0; j < i; j++)
+			{
+				free(MassFirst[j]);
+			}
+
+
+			for (int j = 0; j < i-1; j++)
+			{
+				free(MassSecond[j]);
+			}
+
+			free(MassFirst);
+			free(MassSecond);
+
+
+			exit(0);
+		}
+
+
+		MassSecond[i] = new int[SizeOfMass];
+
+		if (MassSecond[i]==NULL)
+		{
+			ShowMessage("Нет памяти");
+
+			for (int j = 0; j < i; j++)
+			{
+				free(MassFirst[j]);
+			}
+
+
+			for (int j = 0; j < i-1; j++)
+			{
+				free(MassSecond[j]);
+			}
+
+			free(MassFirst);
+			free(MassSecond);
+
+			exit(0);
+		}
+
+
+	}
+
+	for (int i = 0; i < SizeOfMass; i++)
+	{
+		for (int j = 0; i < SizeOfMass; i++)
+		{
+			MassFirst[i][j]=0;
+			MassSecond[i][j]=0;
+
+		}
+
+	}
+
+
+
+}
 
 
 
@@ -272,16 +361,18 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 
 	FILE *F;
 
-	F=fopen("Stat.txt","r+");
 
+	F=fopen("Stat.txt","r+");
 
 	int Dies;
 	int Life;
+
 
 	char Buf;
 	char SDies[10];
 	char SLife[10];
 	bool Raz;
+
 	Raz=false;
 
 	i=0;
@@ -327,6 +418,7 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 	fclose(F);
 
 
+
 	char a;
 
 
@@ -360,6 +452,7 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 	strcat(StrIn,SDies);
 	strcat(StrIn,"%");
 
+
 	F=fopen("Stat.txt","w+");
 
 	fputs(StrIn,F);
@@ -380,7 +473,6 @@ void Life(int **MassFirst, int **MassSecond,int SizeOfMass)
 void DrawSquare(TColor Clr,int X, int Y, int SizeOfSquare,TBitmap *Bitmap)
 {
 
-
 	Bitmap->Canvas->Pen->Width=1;
 	Bitmap->Canvas->Brush->Color=Clr;
 	Bitmap->Canvas->Pen->Color=Clr;
@@ -391,7 +483,6 @@ void DrawSquare(TColor Clr,int X, int Y, int SizeOfSquare,TBitmap *Bitmap)
 		Bitmap->Canvas->Rectangle(X/SizeOfSquare*SizeOfSquare+2,Y/SizeOfSquare*SizeOfSquare+2,X/SizeOfSquare*SizeOfSquare+SizeOfSquare,Y/SizeOfSquare*SizeOfSquare+SizeOfSquare);
 
 	}
-
 
 }
 
@@ -406,7 +497,6 @@ void DrawImage(int X, int Y, int SizeOfSquare,TBitmap *Bitmap,TBitmap *Squar)
 		Bitmap->Canvas->Draw(X/SizeOfSquare*SizeOfSquare+2,Y/SizeOfSquare*SizeOfSquare+2,Squar);
 
 	}
-
 
 }
 
@@ -485,7 +575,6 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 	}
 
 
-
 	for (i = 0; i < SizeOfMass; i++)
 	{
 		for (j = 0; j < SizeOfMass; j++)
@@ -526,7 +615,6 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 			}
 
 
-
 			if ((MassFirst[XMass[0]][YMass[0]]==0) && (MassFirst[XMass[1]][YMass[1]]==1) &&
 			(MassFirst[XMass[2]][YMass[2]]==0) && (MassFirst[XMass[3]][YMass[3]]==0) &&
 			(MassFirst[XMass[4]][YMass[4]]==0) && (MassFirst[XMass[5]][YMass[5]]==1)
@@ -541,7 +629,6 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 				DrawSquare(PlanerColor,XMass[8]*SizeOfSquare+10,YMass[8]*SizeOfSquare+10,SizeOfSquare,Bitmap);
 
 			}
-
 
 
 			if ((MassFirst[XMass[0]][YMass[0]]==1) && (MassFirst[XMass[1]][YMass[1]]==0) &&
@@ -592,17 +679,13 @@ void DrawMassWithPlaners(int **MassFirst, int SizeOfMass, int SizeOfSquare,TBitm
 			}
 
 
-
 		}
-
 
 
 	}
 
 
-
 }
-
 
 
 
@@ -621,7 +704,6 @@ bool EcranInfo(int **MassFirst, int MassEcranX[16], int MassEcranY[16])
 	}
 
 	return true;
-
 
 }
 
@@ -833,8 +915,6 @@ void DrawMassWithUndangerPlaners(int **MassFirst, int SizeOfMass, int SizeOfSqua
 				}
 
 
-				//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
 
 
 				if ((MassFirst[XMass[0]][YMass[0]]==0) && (MassFirst[XMass[1]][YMass[1]]==1) &&
@@ -903,7 +983,6 @@ void DrawMassWithUndangerPlaners(int **MassFirst, int SizeOfMass, int SizeOfSqua
 
 
 
-				//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 				if ((MassFirst[XMass[0]][YMass[0]]==1) && (MassFirst[XMass[1]][YMass[1]]==1) &&
@@ -1036,17 +1115,13 @@ void DrawMassWithUndangerPlaners(int **MassFirst, int SizeOfMass, int SizeOfSqua
 				}
 
 
-
-
 			}
 
 
 		}
 
 
-
 	}
-
 
 }
 
@@ -1266,7 +1341,6 @@ void DrawMassWithUndangerPlanersAndImage(int **MassFirst, int SizeOfMass, int Si
 				}
 
 
-				//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 
@@ -1335,8 +1409,6 @@ void DrawMassWithUndangerPlanersAndImage(int **MassFirst, int SizeOfMass, int Si
 				}
 
 
-
-				//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 				if ((MassFirst[XMass[0]][YMass[0]]==1) && (MassFirst[XMass[1]][YMass[1]]==1) &&
@@ -1467,7 +1539,6 @@ void DrawMassWithUndangerPlanersAndImage(int **MassFirst, int SizeOfMass, int Si
 					DrawImage(XMass[8]*SizeOfSquare+10,YMass[8]*SizeOfSquare+10,SizeOfSquare,Bitmap,Planer);
 
 				}
-
 
 
 
