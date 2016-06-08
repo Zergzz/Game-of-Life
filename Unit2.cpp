@@ -46,7 +46,7 @@ void CreateMass(int **MassFirst, int **MassSecond, int SizeOfMass)
 
 	if (MassFirst==NULL)
 	{
-		ShowMessage("Нет памяти");
+		ShowMessage("ГЌГҐГІ ГЇГ Г¬ГїГІГЁ");
 		exit(0);
 	}
 
@@ -55,8 +55,9 @@ void CreateMass(int **MassFirst, int **MassSecond, int SizeOfMass)
 
 	if (MassSecond==NULL)
 	{
-		 ShowMessage("Нет памяти");
+		 ShowMessage("ГЌГҐГІ ГЇГ Г¬ГїГІГЁ");
 		 free(MassFirst);
+		 exit(0);
 	}
 
 
@@ -65,7 +66,7 @@ void CreateMass(int **MassFirst, int **MassSecond, int SizeOfMass)
 		MassFirst[i] = new int[SizeOfMass];
 		if (MassFirst[i]==NULL)
 		{
-			ShowMessage("Нет памяти");
+			ShowMessage("ГЌГҐГІ ГЇГ Г¬ГїГІГЁ");
 
 			for (int j = 0; j < i; j++)
 			{
@@ -90,7 +91,7 @@ void CreateMass(int **MassFirst, int **MassSecond, int SizeOfMass)
 
 		if (MassSecond[i]==NULL)
 		{
-			ShowMessage("Нет памяти");
+			ShowMessage("ГЌГҐГІ ГЇГ Г¬ГїГІГЁ");
 
 			for (int j = 0; j < i; j++)
 			{
