@@ -1214,3 +1214,17 @@ void __fastcall TForm1::Button13Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
+{
+   for (int i = 0; i < SizeOfMass; i++)
+	{
+	   free(MassFirst[i]);
+	   free(MassSecond[i]);
+	}
+
+	free(MassFirst);
+	free(MassSecond);
+
+}
+//---------------------------------------------------------------------------
+

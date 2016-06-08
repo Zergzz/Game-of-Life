@@ -124,6 +124,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button17Click(TObject *Sender);
 	void __fastcall Button7Click(TObject *Sender);
 	void __fastcall Button13Click(TObject *Sender);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 
 
 
